@@ -257,6 +257,7 @@ GameObject:
   - 124: {fileID: 1227480254}
   - 81: {fileID: 1227480253}
   - 114: {fileID: 1227480258}
+  - 114: {fileID: 1227480259}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -344,6 +345,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mat: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+--- !u!114 &1227480259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1227480252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85bdaafd97988b546a0e2fa43a46a629, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _downsample: 0
+  _shader: {fileID: 4800000, guid: 9b1486d89ddaf824fa3c4e95fef2bf86, type: 3}
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1287611937
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,7 +537,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1560411900}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.69, y: 2.39, z: -1.7280107}
+  m_LocalPosition: {x: 0.69, y: 2.58, z: -1.7280107}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []

@@ -12,36 +12,18 @@ class Line
     }
 };
 
+[RequireComponent(typeof(Camera))]
 public class StarTools : MonoBehaviour {
     
     private static int m_nLinesMax = 20;
-    public Material mat;
+    public Material mat = null;
 
-    private static ArrayList m_lines;
+    private static ArrayList m_lines = new ArrayList();
 
     // Use this for initialization
     void Start () {
-        m_lines = new ArrayList();
 	}
-
-    public static void DrawLine(ConstelationStar start, ConstelationStar end, Color colorStart, Color colorEnd, float duration = 0.2f)
-    {
-        GameObject myLine = new GameObject();
-        myLine.transform.position = start.transform.position;
-        myLine.AddComponent<LineRenderer>();
-        LineRenderer lr = myLine.GetComponent<LineRenderer>();
-        lr.material = new Material(Shader.Find("Particles/Alpha Blended Premultiply"));
-        lr.SetColors(colorStart, colorEnd);
-        lr.SetVertexCount(m_nLinesMax);
-        lr.SetWidth(0.1f, 0.1f);
-        lr.SetPosition(0, start.transform.position);
-        lr.SetPosition(1, end.transform.position);
-        lr.SetPosition(2, Vector3.Cross(start.transform.position, end.transform.position));
-        lr.SetPosition(3, end.transform.position);
-        if (duration>0.0f)
-            GameObject.Destroy(myLine, duration);
-    }
-
+    
     public static void AddLine(ConstelationStar start, ConstelationStar end)
     {
         m_lines.Add(new Line(start, end));
@@ -70,8 +52,13 @@ public class StarTools : MonoBehaviour {
             Debug.LogError("Please Assign a material on the inspector");
             return;
         }
+        if(m_lines==null)
+        {
+            Debug.LogError("Lines is null");
+            return;
+        }
         //GL.PushMatrix();
-        //mat.SetPass(0);
+        mat.SetPass(0);
         //GL.LoadIdentity();
         //GL.MultMatrix(GL.modelview);
         //GL.LoadOrtho();
