@@ -33,7 +33,7 @@ public class Constelation : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (startStar != null && !Input.GetMouseButton(0)) {
+		if (startStar != null && !Input.GetMouseButton(0) && NBActivateStar != NBStar) {
 			destructConstelation ();
 		}
 	}
@@ -114,37 +114,39 @@ public class Constelation : MonoBehaviour {
 
 	public void OnStarEnter(ConstelationStar star){
 		Debug.Log ("ONSTARENTER");
-		if (startStar != null && star != startStar) {
-			var links = GetLinkForStar (startStar);
-			if (links != null && links.Contains (star)) {//if la star est dans les lien
-				StarTools.AddLine (startStar, star);
+		if(NBActivateStar != NBStar) {
+			if (startStar != null && star != startStar) {
+				var links = GetLinkForStar (startStar);
+				if (links != null && links.Contains (star)) {//if la star est dans les lien
+					StarTools.AddLine (startStar, star);
 
 			
-				// all link Show to Iddle
-				foreach (ConstelationStar c in links) {
-					if (c.state == StarStates.SHOW) {
-						c.state = StarStates.IDLE;
+					// all link Show to Iddle
+					foreach (ConstelationStar c in links) {
+						if (c.state == StarStates.SHOW) {
+							c.state = StarStates.IDLE;
+						}
 					}
-				}
-				// all new star iddle to SHOW
-				var newStarLinks = GetLinkForStar (star);
-				foreach (ConstelationStar c in newStarLinks) {
-					if (c.state == StarStates.IDLE) {
-						c.state = StarStates.SHOW;
+					// all new star iddle to SHOW
+					var newStarLinks = GetLinkForStar (star);
+					foreach (ConstelationStar c in newStarLinks) {
+						if (c.state == StarStates.IDLE) {
+							c.state = StarStates.SHOW;
+						}
 					}
+					var oldState = star.state;
+					star.state = StarStates.ACTIVATE;
+					startStar = star;
+
+					if (oldState != StarStates.ACTIVATE && NBActivateStar < NBStar) {
+						NBActivateStar++;
+						UpdateActivateStar ();
+					}
+
+
+				} else {
+					destructConstelation ();
 				}
-				var oldState = star.state;
-				star.state = StarStates.ACTIVATE;
-				startStar = star;
-
-				if (oldState != StarStates.ACTIVATE && NBActivateStar < NBStar) {
-					NBActivateStar++;
-					UpdateActivateStar ();
-				}
-
-
-			} else {
-				destructConstelation ();
 			}
 				
 		}
