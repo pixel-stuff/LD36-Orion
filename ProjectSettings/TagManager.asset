@@ -10,7 +10,7 @@ TagManager:
   - MenuManager
   - GameOverManager
   - PlayerManager
-  - StarLinks
+  - CameraLines
   layers:
   - Default
   - TransparentFX
@@ -20,7 +20,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Game
   - 
   - 
   - 
