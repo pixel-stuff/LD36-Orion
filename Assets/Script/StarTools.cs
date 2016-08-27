@@ -47,7 +47,7 @@ public class StarTools : MonoBehaviour {
         m_lines.Add(new Line(start, end));
     }
 
-    public static void Clear(ConstelationStar start)
+    public static void ClearLinksRelatedTo(ConstelationStar start)
     {
         foreach(Line l in m_lines)
         {
@@ -56,6 +56,11 @@ public class StarTools : MonoBehaviour {
                 m_lines.Remove(l);
             }
         }
+    }
+
+    public static void Clear()
+    {
+        m_lines.Clear());
     }
 
     void OnPostRender()
