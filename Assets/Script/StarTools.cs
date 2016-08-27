@@ -60,7 +60,7 @@ public class StarTools : MonoBehaviour {
 
     public static void Clear()
     {
-        m_lines.Clear());
+        m_lines.Clear();
     }
 
     void OnPostRender()
