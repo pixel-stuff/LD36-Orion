@@ -120,6 +120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7176de5a49b94f5bb3d6f444f175ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  starConstelation: {fileID: 0}
+  _state: 0
+  overParticule: {fileID: 0}
 --- !u!23 &197828197
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -244,6 +247,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!84 &256839489
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 795
+  m_Height: 447
+  m_AntiAliasing: 1
+  m_DepthFormat: 0
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 1
 --- !u!1 &1227480252
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,6 +284,7 @@ GameObject:
   - 114: {fileID: 1227480260}
   - 114: {fileID: 1227480259}
   - 114: {fileID: 1227480258}
+  - 114: {fileID: 1227480261}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -355,7 +381,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1227480252}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 646b5bc27a658f447b1d929fd5ffbd70, type: 3}
   m_Name: 
@@ -388,28 +414,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starOne: {fileID: 197828196}
   starTwo: {fileID: 1560411901}
---- !u!84 &1502200295
-RenderTexture:
+--- !u!114 &1227480261
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1227480252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc6bde01469c7b4badee5362f191d96, type: 3}
   m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 795
-  m_Height: 447
-  m_AntiAliasing: 1
-  m_DepthFormat: 0
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 1
+  m_EditorClassIdentifier: 
+  downsample: 0
+  blurSize: 0
+  blurIterations: 1
+  blurType: 0
+  blurShader: {fileID: 4800000, guid: f9d5fa183cd6b45eeb1491f74863cd91, type: 3}
 --- !u!1 &1560411900
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,6 +460,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7176de5a49b94f5bb3d6f444f175ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  starConstelation: {fileID: 0}
+  _state: 0
+  overParticule: {fileID: 0}
 --- !u!23 &1560411902
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -596,7 +619,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 1502200295}
+  m_TargetTexture: {fileID: 256839489}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
