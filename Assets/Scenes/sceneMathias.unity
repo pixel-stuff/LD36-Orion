@@ -100,6 +100,7 @@ GameObject:
   - 224: {fileID: 29943004}
   - 222: {fileID: 29943006}
   - 114: {fileID: 29943005}
+  - 114: {fileID: 29943007}
   m_Layer: 5
   m_Name: Monster
   m_TagString: Untagged
@@ -158,6 +159,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 29943003}
+--- !u!114 &29943007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 29943003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b921f4ae91944ec0be61705c6b06c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &111940965
 GameObject:
   m_ObjectHideFlags: 0
