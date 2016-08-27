@@ -20,5 +20,5 @@ public class GameOver : MonoBehaviour {
 			yield return new WaitForEndOfFrame();
 		}while(alpha <= 1.0f);
 	}
-	#region Coroutine
+	#endregion Coroutine
 }
