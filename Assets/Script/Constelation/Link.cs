@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class Link : MonoBehaviour {
+	public ConstelationStar targetStar;
 
 	// Use this for initialization
 	void Start () {
