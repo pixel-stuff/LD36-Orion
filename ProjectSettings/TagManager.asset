@@ -10,6 +10,7 @@ TagManager:
   - MenuManager
   - GameOverManager
   - PlayerManager
+  - StarLinks
   layers:
   - Default
   - TransparentFX

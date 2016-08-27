@@ -62,10 +62,18 @@ public class StarTools : MonoBehaviour {
         //GL.LoadIdentity();
         //GL.MultMatrix(GL.modelview);
         //GL.LoadOrtho();
+        //GL.Begin(GL.TRIANGLE_STRIP);
         GL.Begin(GL.LINES);
         GL.Color(Color.white);
         foreach(Line l in m_lines)
         {
+            /*GL.Vertex(l.start.transform.position + new Vector3(0.0f, -0.1f, 0.0f));
+            GL.Vertex(l.start.transform.position + new Vector3(0.0f, 0.1f, 0.0f));
+            GL.Vertex(l.end.transform.position + new Vector3(0.0f, 0.1f, 0.0f));
+
+            GL.Vertex(l.end.transform.position + new Vector3(0.0f, -0.1f, 0.0f));
+            GL.Vertex(l.end.transform.position + new Vector3(0.0f, 0.1f, 0.0f));
+            GL.Vertex(l.start.transform.position + new Vector3(0.0f, -0.1f, 0.0f));*/
             GL.Vertex(l.start.transform.position);
             GL.Vertex(l.end.transform.position);
         }
