@@ -60,10 +60,10 @@ public class StarTools : MonoBehaviour {
         m_lines.Clear();
     }
 
-    public static void DrawFromStarToMouse(bool drawIt, ConstelationStar start, Vector3 end)
+    public static void DrawFromStarToMouse(bool drawIt, Vector3 start, Vector3 end)
     {
         _drawIt = drawIt;
-        _Start = start.transform.position;
+        _Start = start;
         _End = end;
     }
 
