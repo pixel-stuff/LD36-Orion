@@ -89,8 +89,8 @@ public class ConstelationStar : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//InitialScale = star.transform.localScale.x;
-		//IdleSprite = star.GetComponent < UnityEngine.UI.Image> ().sprite;
+		InitialScale = star.transform.localScale.x;
+		IdleSprite = star.GetComponent < UnityEngine.UI.Image> ().sprite;
 	}
 	
 	// Update is called once per frame
