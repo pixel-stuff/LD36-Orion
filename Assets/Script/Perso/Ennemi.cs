@@ -18,9 +18,9 @@ public class Ennemi : Perso {
 		int lastIndex = m_ennemiState.Length - 1 - (int)m_currentPercentLife/((int)m_pvMax / m_ennemiState.Length);
 		int newIndex = m_ennemiState.Length - 1 - (int)newPercent/((int)m_pvMax / m_ennemiState.Length);
 
-		if (lastIndex != newIndex) {
+		/*if (lastIndex != newIndex) {
 			this.GetComponent<Image>().sprite = m_ennemiState [newIndex];
-		}
+		}*/
 		m_currentPercentLife = newPercent;
 	}
 

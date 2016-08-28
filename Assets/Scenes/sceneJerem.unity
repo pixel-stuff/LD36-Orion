@@ -451,12 +451,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
---- !u!114 &714696437 stripped
+--- !u!114 &1089622305 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000010877801120, guid: 7ef8bd13c7dca41daaeed8992e8f30d5,
     type: 2}
   m_PrefabInternal: {fileID: 518370601}
   m_Script: {fileID: 11500000, guid: d7176de5a49b94f5bb3d6f444f175ade, type: 3}
+--- !u!84 &1102300659
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 1257
+  m_Height: 584
+  m_AntiAliasing: 1
+  m_DepthFormat: 0
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 1
 --- !u!1 &1102896731
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,28 +526,6 @@ WindZone:
   m_WindTurbulence: 1
   m_WindPulseMagnitude: 20
   m_WindPulseFrequency: 0.01
---- !u!84 &1118331546
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 1257
-  m_Height: 584
-  m_AntiAliasing: 1
-  m_DepthFormat: 0
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 1
 --- !u!1 &1227480252
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,7 +901,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 1118331546}
+  m_TargetTexture: {fileID: 1102300659}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -1188,12 +1188,12 @@ Prefab:
         type: 2}
       propertyPath: constelation.Array.data[0].links.Array.data[0]
       value: 
-      objectReference: {fileID: 714696437}
+      objectReference: {fileID: 1089622305}
     - target: {fileID: 114000013551750320, guid: a7d193944bf39434e9a1645328812095,
         type: 2}
       propertyPath: constelation.Array.data[1].star
       value: 
-      objectReference: {fileID: 714696437}
+      objectReference: {fileID: 1089622305}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7d193944bf39434e9a1645328812095, type: 2}
   m_IsPrefabParent: 0
