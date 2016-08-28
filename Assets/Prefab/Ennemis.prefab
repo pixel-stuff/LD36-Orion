@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - 224: {fileID: 224000011636191598}
   - 114: {fileID: 114000010896091628}
-  - 82: {fileID: 82000010350207316}
   m_Layer: 5
   m_Name: Ennemis
   m_TagString: Untagged
@@ -40,13 +39,14 @@ GameObject:
   - 114: {fileID: 114000011052010100}
   - 95: {fileID: 95000014182424460}
   - 114: {fileID: 114000014121539558}
+  - 82: {fileID: 82000010458082680}
   m_Layer: 5
   m_Name: Argos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1000012481226108
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,6 +59,7 @@ GameObject:
   - 114: {fileID: 114000011768702722}
   - 114: {fileID: 114000010688476676}
   - 95: {fileID: 95000010845760250}
+  - 82: {fileID: 82000012033686918}
   m_Layer: 5
   m_Name: Argos2
   m_TagString: Untagged
@@ -66,18 +67,92 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!82 &82000010350207316
+--- !u!82 &82000010458082680
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010657417714}
+  m_GameObject: {fileID: 1000011905849894}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3a78c196200094aa4a0ab1f75870cd1a, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.51
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!82 &82000012033686918
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012481226108}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.515
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -190,6 +265,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: bd1eadafde5bd4576a3027f1f9ec82e1, type: 3}
   - {fileID: 21300000, guid: 070d8c497908a40e197e5e7c6be476d9, type: 3}
   m_powerAttack: 20
+  m_timeBetweenAttack: 6
   m_ennemiType: 1
   m_apparitionSound: {fileID: 8300000, guid: 4e53697c2ba494b6fbeecf09a4dd4d7e, type: 3}
   m_attackSound: {fileID: 8300000, guid: ddd8c7370e8c64267bfe9b5407de9801, type: 3}
@@ -277,9 +353,8 @@ MonoBehaviour:
   m_ennemiState:
   - {fileID: 21300000, guid: 9e52bcea8f10f4356ae85c5ff26c5137, type: 3}
   - {fileID: 21300000, guid: 2cc8d6e8194064dbe8174a1497b623e5, type: 3}
-  - {fileID: 21300000, guid: 2cc8d6e8194064dbe8174a1497b623e5, type: 3}
-  - {fileID: 21300000, guid: 2cc8d6e8194064dbe8174a1497b623e5, type: 3}
-  m_powerAttack: 0
+  m_powerAttack: 11
+  m_timeBetweenAttack: 6
   m_ennemiType: 2
   m_apparitionSound: {fileID: 8300000, guid: b9a345b6565aa4a889b996f093a6eead, type: 3}
   m_attackSound: {fileID: 8300000, guid: 48ff575736c394e308ef7fb0dcc0396d, type: 3}

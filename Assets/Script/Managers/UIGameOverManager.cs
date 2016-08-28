@@ -5,12 +5,7 @@ public class UIGameOverManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+		AudioManager.m_instance.PlayMenuMusic ();
 	}
 
 	public void ReturnToSceneMenu(){

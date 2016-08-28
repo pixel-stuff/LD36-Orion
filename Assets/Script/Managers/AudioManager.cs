@@ -4,7 +4,7 @@ using System.Collections;
 public class AudioManager : MonoBehaviour {
 
 	#region Singleton
-	private static AudioManager m_instance;
+	public static AudioManager m_instance;
 	void Awake(){
 		if(m_instance == null){
 			//If I am the first instance, make me the Singleton
@@ -20,17 +20,46 @@ public class AudioManager : MonoBehaviour {
 	#endregion Singleton
 
 	[SerializeField]
-	private string m_backgroundAudioSource;
+	private AudioClip m_menuAudioClip;
+	[SerializeField]
+	private AudioClip m_fightAudioClip;
 
 	private static Transform m_transform;
 
 	// Use this for initialization
 	void Start () {
 		m_transform = this.transform;
-		Play (m_backgroundAudioSource);
+		PlayMenuMusic ();
 	}
 
-	public static void Play(string clipname){
+	public void PlayMenuMusic(){
+		//Create an empty game object
+		GameObject go = new GameObject ("Audio_" +  m_menuAudioClip.name);
+		go.transform.parent = null;
+
+		//Add and bind an audio source
+		AudioSource source = go.AddComponent<AudioSource>();
+		source.clip = m_menuAudioClip;
+		//Play and destroy the component
+		source.Play();
+		source.loop = true;
+	}
+
+
+	public void PlayFightMusic(){
+		//Create an empty game object
+		GameObject go = new GameObject ("Audio_" +  m_fightAudioClip.name);
+		go.transform.parent = null;
+
+		//Add and bind an audio source
+		AudioSource source = go.AddComponent<AudioSource>();
+		source.clip = m_fightAudioClip;
+		//Play and destroy the component
+		source.Play();
+		source.loop = true;
+	}
+
+	public static void PlayMenuMusic(string clipname){
 		//Create an empty game object
 		GameObject go = new GameObject ("Audio_" +  clipname);
 		go.transform.parent = m_transform;

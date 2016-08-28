@@ -15,10 +15,12 @@ public class Ennemi : Perso {
 	public Sprite[] m_ennemiState;
 	public int m_powerAttack = 51;
 	public Action OnDeadEvent;
+	public float m_timeBetweenAttack = 6.0f;
 	public EnnemiType m_ennemiType  = EnnemiType.Generique;
 	public AudioClip m_apparitionSound;
 	public AudioClip m_attackSound;
 	public AudioClip m_deathSound;
+
 
 	public void StarEnnemi(){
 		this.GetComponent<AudioSource> ().clip = m_apparitionSound;
@@ -57,7 +59,7 @@ public class Ennemi : Perso {
 	public IEnumerator CoroutLogiqueEnnemi(){
 		float lastAttack = Time.time;
 		do{
-			if( (Time.time - lastAttack) >= 3.0f){
+			if( (Time.time - lastAttack) >= m_timeBetweenAttack){
 				lastAttack = Time.time;
 				this.StartAttack();
 				this.GetComponent<AudioSource> ().clip = m_attackSound;
@@ -69,7 +71,6 @@ public class Ennemi : Perso {
 		}while(GameStateManager.getGameState() != GameState.GameOver && m_pv > 0);
 
 		if (m_pv <= 0) {
-			Debug.Log ("Start Death");
 			StartDeath ();
 			this.GetComponent<AudioSource> ().clip = m_deathSound;
 			this.GetComponent<AudioSource> ().Play ();
@@ -77,7 +78,6 @@ public class Ennemi : Perso {
 			Debug.Log ("-> " + this.GetComponent<Animator> ().GetCurrentAnimatorClipInfo (0) [0].clip.length);
 			yield return new WaitForSeconds (this.GetComponent<Animator> ().GetCurrentAnimatorClipInfo (0) [0].clip.length);
 
-			Debug.Log ("Spend Event");
 			if (OnDeadEvent != null) {
 				OnDeadEvent ();
 			}

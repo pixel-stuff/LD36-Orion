@@ -16,9 +16,11 @@ public class Heros : Perso {
 	public AudioClip m_defenseSound;
 
 	void Start(){
+		AudioManager.m_instance.PlayFightMusic ();
 		this.GetComponent<Image> ().enabled = true;
 		this.GetComponent<AudioSource> ().clip = m_apparitionSound;
 		this.GetComponent<AudioSource> ().Play ();
+
 	}
 
 	void Update(){
@@ -87,9 +89,8 @@ public class Heros : Perso {
 
 		if (m_pv <= 0) {
 			GameStateManager.setGameState (GameState.GameOver);
-		} else {
-			
 		}
+		m_coeffDef = 1;
 	}
 
 	#endregion Coroutine
