@@ -225,14 +225,14 @@ public class StarTools : MonoBehaviour
         GL.Vertex(Vector3.forward);
         GL.Color(Color.white);*/
         //Matrix4x4 mat = Matrix4x4();
-        //GL.Color(_MainColor);
+        GL.Color(_MainColor);
         foreach (Line l in m_lines)
         {
             GLine(l.start.transform.position, l.end.transform.position);
         }
         if (_drawIt)
         {
-            //GL.Color(_SecondaryColor);
+            GL.Color(_SecondaryColor);
             GLine(_Start, _End);
         }
         GL.PopMatrix();
