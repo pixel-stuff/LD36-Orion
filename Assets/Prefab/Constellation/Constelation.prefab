@@ -83,18 +83,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70f3a7e81568e427f9dfee30013fe7a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  constelation:
-  - star: {fileID: 0}
-    links:
-    - {fileID: 0}
-  - star: {fileID: 0}
-    links:
-    - {fileID: 0}
-    - {fileID: 0}
-  - star: {fileID: 0}
-    links:
-    - {fileID: 0}
-  LinkPrefab: {fileID: 1000014209819676, guid: 0a1c295536ee04a50840f344ebb690a6, type: 2}
+  constelation: []
+  LinkPrefab: {fileID: 1000014209819676, guid: 2e19603b075584a4081235a102aa0c4e, type: 2}
   listLinks: []
   startStar: {fileID: 0}
   ConstelationImage: {fileID: 114000011930869082}

@@ -277,6 +277,8 @@ MonoBehaviour:
   m_ennemiState:
   - {fileID: 21300000, guid: 9e52bcea8f10f4356ae85c5ff26c5137, type: 3}
   - {fileID: 21300000, guid: 2cc8d6e8194064dbe8174a1497b623e5, type: 3}
+  - {fileID: 21300000, guid: 2cc8d6e8194064dbe8174a1497b623e5, type: 3}
+  - {fileID: 21300000, guid: 2cc8d6e8194064dbe8174a1497b623e5, type: 3}
   m_powerAttack: 0
   m_ennemiType: 2
   m_apparitionSound: {fileID: 8300000, guid: b9a345b6565aa4a889b996f093a6eead, type: 3}
