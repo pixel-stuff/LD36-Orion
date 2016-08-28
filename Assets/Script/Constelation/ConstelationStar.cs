@@ -27,7 +27,6 @@ public class ConstelationStar : MonoBehaviour {
 			switch (value) {
 			case StarStates.ACTIVATE:
 				star.GetComponent < UnityEngine.UI.Image> ().sprite = ActivateSprite;
-				//todo change image
 				star.transform.localScale = new Vector3 (InitialScale, InitialScale, 1);
 				if (rotationEnumeration != null) {
 					StopCoroutine (rotationEnumeration);
