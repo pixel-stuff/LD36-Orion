@@ -122,7 +122,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starConstelation: {fileID: 0}
   _state: 0
+  star: {fileID: 0}
   overParticule: {fileID: 0}
+  ShowStateScaleAddition: 0.5
+  OverStateScaleAddition: 1
+  ActivateSprite: {fileID: 0}
 --- !u!23 &197828197
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -279,7 +283,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starConstelation: {fileID: 0}
   _state: 0
+  star: {fileID: 0}
   overParticule: {fileID: 0}
+  ShowStateScaleAddition: 0.5
+  OverStateScaleAddition: 1
+  ActivateSprite: {fileID: 0}
 --- !u!23 &731000651
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -583,8 +591,8 @@ GameObject:
   - 124: {fileID: 1227480254}
   - 81: {fileID: 1227480253}
   - 114: {fileID: 1227480260}
-  - 114: {fileID: 1227480259}
   - 114: {fileID: 1227480258}
+  - 114: {fileID: 1227480259}
   - 114: {fileID: 1227480261}
   m_Layer: 0
   m_Name: Main Camera
@@ -670,10 +678,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1227480252}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1e1fb376fca93448a58ea995bec3b4, type: 3}
+  m_Script: {fileID: 11500000, guid: a9dda3b4e568441a8a7de47d94b89fa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shader: {fileID: 4800000, guid: 3910b928402dc9741a42ec94160bf693, type: 3}
+  _shader: {fileID: 4800000, guid: e62aea93c5ff0448391c2c7c29bcafb5, type: 3}
   _cam: {fileID: 1768455279}
   color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1227480259
@@ -733,6 +741,28 @@ MonoBehaviour:
   blurIterations: 1
   blurType: 0
   blurShader: {fileID: 4800000, guid: f9d5fa183cd6b45eeb1491f74863cd91, type: 3}
+--- !u!84 &1407034320
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 795
+  m_Height: 447
+  m_AntiAliasing: 1
+  m_DepthFormat: 0
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 1
 --- !u!1 &1560411900
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,7 +795,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starConstelation: {fileID: 0}
   _state: 0
+  star: {fileID: 0}
   overParticule: {fileID: 0}
+  ShowStateScaleAddition: 0.5
+  OverStateScaleAddition: 1
+  ActivateSprite: {fileID: 0}
 --- !u!23 &1560411902
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -827,28 +861,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
---- !u!84 &1590074605
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 795
-  m_Height: 447
-  m_AntiAliasing: 1
-  m_DepthFormat: 0
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 1
 --- !u!1 &1598059688
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,7 +893,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starConstelation: {fileID: 0}
   _state: 0
+  star: {fileID: 0}
   overParticule: {fileID: 0}
+  ShowStateScaleAddition: 0.5
+  OverStateScaleAddition: 1
+  ActivateSprite: {fileID: 0}
 --- !u!23 &1598059690
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1065,7 +1081,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 1590074605}
+  m_TargetTexture: {fileID: 1407034320}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0

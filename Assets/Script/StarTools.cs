@@ -82,7 +82,7 @@ public class StarTools : MonoBehaviour {
         GL.Color(Color.white);
         GL.PushMatrix();
         //GL.LoadIdentity();
-        if (Application.platform == RuntimePlatform.WindowsPlayer)
+        if (Application.platform == RuntimePlatform.WindowsEditor)
         {
             bool d3d = SystemInfo.graphicsDeviceVersion.IndexOf("Direct3D") > -1;
             Matrix4x4 M = transform.localToWorldMatrix;
@@ -98,6 +98,10 @@ public class StarTools : MonoBehaviour {
             Matrix4x4 MVP = P * V * M;
             //GL.MultMatrix(Matrix4x4.TRS(Camera.main.transform.position, Camera.main.transform.rotation, Camera.main.transform.localScale));
             GL.LoadProjectionMatrix(MVP);
+        }
+        else
+        {
+            //GL.MultMatrix(Matrix4x4.TRS(Camera.main.transform.position, Camera.main.transform.rotation, Camera.main.transform.localScale));
         }
         //GL.LoadPixelMatrix();
         //GL.MultMatrix(MVP);
