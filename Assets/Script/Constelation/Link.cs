@@ -32,6 +32,7 @@ public class Link : MonoBehaviour {
 		so.ApplyModifiedProperties ();
 
 		float alpha = Vector3.Angle (vector, new Vector3 (1, 0, 0));
+		alpha = (vector.y < 0) ? -alpha : alpha;
 		this.transform.Rotate (new Vector3(0,0,alpha));
 	}
 
