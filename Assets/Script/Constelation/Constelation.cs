@@ -2,6 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 
+public enum ConstellationType {
+	ATTACK,
+	DEFENCE,
+	HEAL
+}
+
 [System.Serializable]
 public struct ConstelationNode  {
 	public ConstelationStar star;
@@ -47,7 +53,7 @@ public class Constelation : MonoBehaviour {
 		if (FadeEnumeration != null) {
 			StopCoroutine (FadeEnumeration);
 		}
-			FadeEnumeration = FadeTo (percent, 1.0f);
+		FadeEnumeration = FadeTo (percent*maxAlpha, 1.0f);
 		
 		StartCoroutine(FadeEnumeration);
 	}
