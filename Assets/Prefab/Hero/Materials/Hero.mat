@@ -74,6 +74,9 @@ Material:
         name: PixelSnap
       second: 0
     - first:
+        name: _BlinkOpacity
+      second: -0.25
+    - first:
         name: _BumpScale
       second: 1
     - first:

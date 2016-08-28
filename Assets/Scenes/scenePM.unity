@@ -615,7 +615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shader: {fileID: 4800000, guid: e62aea93c5ff0448391c2c7c29bcafb5, type: 3}
   _cam: {fileID: 1768455279}
-  color: {r: 0.06044119, g: 0.822, b: 0.55321467, a: 0}
+  color: {r: 1, g: 1, b: 1, a: 0}
 --- !u!114 &1227480259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -674,11 +674,50 @@ MonoBehaviour:
   blurIterations: 1
   blurType: 0
   blurShader: {fileID: 4800000, guid: f9d5fa183cd6b45eeb1491f74863cd91, type: 3}
+--- !u!84 &1300628628
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 795
+  m_Height: 447
+  m_AntiAliasing: 1
+  m_DepthFormat: 0
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 1
+--- !u!1 &1427758167 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000014142652306, guid: b602dd12e5e50634abb1a7357759dc01,
+    type: 2}
+  m_PrefabInternal: {fileID: 1566033164}
 --- !u!224 &1427758174 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224000013112109026, guid: b602dd12e5e50634abb1a7357759dc01,
     type: 2}
   m_PrefabInternal: {fileID: 1566033164}
+--- !u!114 &1427758175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1427758167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40e3180d9c406584d86bf61c1fae58f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mat: {fileID: 2100000, guid: ebec57c6693a941e6bcd0f7effd00795, type: 2}
 --- !u!1 &1560411900
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,28 +1049,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
---- !u!84 &1671457744
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 795
-  m_Height: 447
-  m_AntiAliasing: 1
-  m_DepthFormat: 0
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 1
 --- !u!1 &1768455275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,6 +1081,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_size: 0.05
   mat: {fileID: 2100000, guid: 836ea591693e64296a792d2131a5c7db, type: 2}
+  _MainColor: {r: 1, g: 1, b: 1, a: 1}
+  _SecondaryColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1768455277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1154,7 +1173,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 1671457744}
+  m_TargetTexture: {fileID: 1300628628}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0

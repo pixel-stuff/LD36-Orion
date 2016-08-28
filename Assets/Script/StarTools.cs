@@ -36,6 +36,9 @@ public class StarTools : MonoBehaviour
 
     private static ArrayList m_lines = new ArrayList();
 
+    public Color _MainColor = Color.white;
+    public Color _SecondaryColor = Color.white;
+
     // Use this for initialization
     void Start()
     {
@@ -142,7 +145,6 @@ public class StarTools : MonoBehaviour
         //Matrix4x4 rot = Matrix4x4.TRS(new Vector3((start.y - end.y) / 2.0f, (start.y-end.y)/2.0f, 0.0f), Quaternion.AngleAxis(Mathf.Rad2Deg*angle, Vector3.up), Vector3.one);
         Vector3 dir = (end - start).normalized;
         angle = Vector3.Angle(Vector3.right, dir);
-        Debug.Log(angle);
         //GL.LoadIdentity();
         Quaternion q = Quaternion.Euler(0, 0, angle * Mathf.Sign(dir.y));
         Matrix4x4 trs = Matrix4x4.TRS(Vector3.zero, q, Vector3.one);
@@ -180,8 +182,8 @@ public class StarTools : MonoBehaviour
             return;
         }
         mat.SetPass(0);
-        GL.Color(Color.white);
         GL.PushMatrix();
+        GL.Color(Color.white);
         //GL.LoadIdentity();
         if (Application.platform == RuntimePlatform.WindowsEditor)
         {
@@ -223,15 +225,17 @@ public class StarTools : MonoBehaviour
         GL.Vertex(Vector3.forward);
         GL.Color(Color.white);*/
         //Matrix4x4 mat = Matrix4x4();
+        //GL.Color(_MainColor);
         foreach (Line l in m_lines)
         {
             GLine(l.start.transform.position, l.end.transform.position);
         }
         if (_drawIt)
         {
+            //GL.Color(_SecondaryColor);
             GLine(_Start, _End);
         }
-        GL.End();
         GL.PopMatrix();
+        GL.End();
     }
 }
