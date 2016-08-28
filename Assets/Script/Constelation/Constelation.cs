@@ -128,7 +128,7 @@ public class Constelation : MonoBehaviour {
 		UpdateActivateStar ();
 	}
 		
-	List<ConstelationStar> GetLinkForStar(ConstelationStar star){
+	public List<ConstelationStar> GetLinkForStar(ConstelationStar star){
 		foreach (ConstelationNode c in constelation) {
 			if (c.star == star) {
 				return c.links;
