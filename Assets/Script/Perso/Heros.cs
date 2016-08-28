@@ -11,8 +11,18 @@ public class Heros : Perso {
 	public Sprite[] m_braceletState;
 
 	#region Controls
-	public void StartAction(int StarNumbers){//, ConstelationType){//, Constellation
+	public void StartAction(int StarNumbers, ConstelationType type){
+		switch (type) {
+		case ConstelationType.ATTACK:
 
+			break;
+		case ConstelationType.DEFENCE:
+
+			break;
+		case ConstelationType.HEAL:
+
+			break;
+		}
 	}
 	#endregion Controls
 
