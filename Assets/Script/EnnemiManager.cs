@@ -33,6 +33,11 @@ public class EnnemiManager : MonoBehaviour {
 		this.GetComponent<AudioSource> ().Play ();
 	}
 
+	public void EnnemiBeingAttack(int value){
+		m_ennemis [m_currentEnnemi].StartBeingAttack (value);
+	}
+
+
 	void OnDestroy(){
 		for (int i = 0; i < m_ennemis.Length; i++) {
 			m_ennemis [i].OnDeadEvent -= GoToNextEnnemi;

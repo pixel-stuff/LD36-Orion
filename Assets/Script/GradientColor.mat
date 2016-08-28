@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: GradientColor
-  m_Shader: {fileID: 4800000, guid: 2f3b4ca64f6bb45a58fd670f96906df3, type: 3}
+  m_Shader: {fileID: 4800000, guid: 12d637030acb84a2bb5de5a569f19915, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -127,13 +127,13 @@ Material:
       second: {r: 1, g: 1, b: 0, a: 1}
     - first:
         name: _ColorBot
-      second: {r: 1, g: 0, b: 0.8382353, a: 1}
+      second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _ColorMid
-      second: {r: 1, g: 0.3602941, b: 0.5294118, a: 1}
+      second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _ColorTop
-      second: {r: 0, g: 0.7352941, b: 0.9191176, a: 1}
+      second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
