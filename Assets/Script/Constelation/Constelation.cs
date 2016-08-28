@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public enum ConstellationType {
+public enum ConstelationType {
 	ATTACK,
 	DEFENCE,
 	HEAL
