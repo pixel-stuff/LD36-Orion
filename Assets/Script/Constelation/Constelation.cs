@@ -133,13 +133,13 @@ public class Constelation : MonoBehaviour {
 	}
 
 	public void OnStarEnter(ConstelationStar star){
-		Debug.Log ("ONSTARENTER");
+		
 		if(NBActivateStar != NBStar) {
 			if (startStar != null && star != startStar) {
 				var links = GetLinkForStar (startStar);
 				if (links != null && links.Contains (star)) {//if la star est dans les lien
 					StarTools.AddLine (startStar, star);
-
+					Debug.Log ("ADDLINE");
 			
 					// all link Show to Iddle
 					foreach (ConstelationStar c in links) {
