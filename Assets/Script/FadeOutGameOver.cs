@@ -3,13 +3,18 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameOver : MonoBehaviour {
+public class FadeOutGameOver : MonoBehaviour {
 
-	public void StartGameOverAnimation () {
-		StartCoroutine (CoroutFadeOutAnim ());
+
+	void Start(){
+		GameStateManager.onChangeStateEvent += StartGameOverAnimation;
 	}
 
-
+	public void StartGameOverAnimation (GameState newState) {
+		if (newState == GameState.GameOver) {
+			StartCoroutine (CoroutFadeOutAnim ());
+		}
+	}
 
 	#region Coroutine
 	public IEnumerator CoroutFadeOutAnim(){

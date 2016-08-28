@@ -10,9 +10,7 @@ public class Heros : Perso {
 
 	public Sprite[] m_braceletState;
 
-	void Start(){
-		StartAction (25, ConstelationType.ATTACK);
-	}
+
 	#region Controls
 	public void StartAction(int value, ConstelationType type){
 		switch (type) {
@@ -41,10 +39,15 @@ public class Heros : Perso {
 		int lastIndex = m_braceletState.Length - 1 - (int)m_currentPercentLife/((int)m_pvMax / m_braceletState.Length);
 		int newIndex = m_braceletState.Length - 1 - (int)newPercent/((int)m_pvMax / m_braceletState.Length);
 
-		/*if (lastIndex != newIndex) {
+		/*if (lastIndex != newIndex && newIndex >= 0) {
 			m_bracelet.sprite = m_braceletState [newIndex];
 		}*/
 		m_currentPercentLife = newPercent;
+
+
+		if (m_pv <= 0) {
+			GameStateManager.setGameState (GameState.GameOver);
+		}
 	}
 
 	#endregion Coroutine
