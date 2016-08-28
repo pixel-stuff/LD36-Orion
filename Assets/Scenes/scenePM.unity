@@ -593,6 +593,7 @@ GameObject:
   - 114: {fileID: 1227480260}
   - 114: {fileID: 1227480258}
   - 114: {fileID: 1227480259}
+  - 114: {fileID: 1227480258}
   - 114: {fileID: 1227480261}
   m_Layer: 0
   m_Name: Main Camera
