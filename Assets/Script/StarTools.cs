@@ -25,8 +25,13 @@ class Line
 public class StarTools : MonoBehaviour {
     
     private static int m_nLinesMax = 20;
+    private static bool _drawIt = false;
     public float m_size = 0.05f;
     public Material mat = null;
+
+    // star to mouse
+    static Vector3 _Start = Vector3.zero;
+    static Vector3 _End = Vector3.zero;
 
     private static ArrayList m_lines = new ArrayList();
 
@@ -55,6 +60,13 @@ public class StarTools : MonoBehaviour {
         m_lines.Clear();
     }
 
+    public static void DrawFromStarToMouse(bool drawIt, ConstelationStar start, Vector3 end)
+    {
+        _drawIt = drawIt;
+        _Start = start.transform.position;
+        _End = end;
+    }
+
     /*public void Update()
     {
 
@@ -64,6 +76,19 @@ public class StarTools : MonoBehaviour {
             cube.transform.position = l.end.transform.position-l.start.transform.position;
         }
     }*/
+
+    private void GLine(Vector3 start, Vector3 end)
+    {
+        GL.Vertex(start + new Vector3(0.0f, -m_size, 0.0f));
+        GL.Vertex(start + new Vector3(0.0f, m_size, 0.0f));
+        GL.Vertex(end + new Vector3(0.0f, m_size, 0.0f));
+
+        GL.Vertex(end + new Vector3(0.0f, -m_size, 0.0f));
+        GL.Vertex(end + new Vector3(0.0f, m_size, 0.0f));
+        GL.Vertex(start + new Vector3(0.0f, -m_size, 0.0f));
+        /*GL.Vertex(l.start.transform.position);
+        GL.Vertex(l.end.transform.position);*/
+    }
 
     void OnPostRender()
     {
@@ -124,15 +149,11 @@ public class StarTools : MonoBehaviour {
         //Matrix4x4 mat = Matrix4x4();
         foreach (Line l in m_lines)
         {
-            GL.Vertex(l.start.transform.position + new Vector3(0.0f, -m_size, 0.0f));
-            GL.Vertex(l.start.transform.position + new Vector3(0.0f, m_size, 0.0f));
-            GL.Vertex(l.end.transform.position + new Vector3(0.0f, m_size, 0.0f));
-
-            GL.Vertex(l.end.transform.position + new Vector3(0.0f, -m_size, 0.0f));
-            GL.Vertex(l.end.transform.position + new Vector3(0.0f, m_size, 0.0f));
-            GL.Vertex(l.start.transform.position + new Vector3(0.0f, -m_size, 0.0f));
-            /*GL.Vertex(l.start.transform.position);
-            GL.Vertex(l.end.transform.position);*/
+            GLine(l.start.transform.position, l.end.transform.position);
+        }
+        if(_drawIt)
+        {
+            GLine(_Start, _End);
         }
         GL.End();
         GL.PopMatrix();
