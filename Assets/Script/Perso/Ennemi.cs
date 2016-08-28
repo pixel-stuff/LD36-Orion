@@ -8,7 +8,7 @@ public class Ennemi : Perso {
 	public Sprite[] m_ennemiState;
 
 	#region Coroutine
-	public override IEnumerator BeingAttack(){
+	public override IEnumerator CoroutBeingAttack(){
 
 		yield return new WaitForEndOfFrame ();
 		yield return new WaitForSeconds (this.GetComponent<Animator> ().GetCurrentAnimatorClipInfo (0).Length);

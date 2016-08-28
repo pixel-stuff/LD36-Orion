@@ -10,10 +10,14 @@ public class Heros : Perso {
 
 	public Sprite[] m_braceletState;
 
+	void Start(){
+		StartAction (25, ConstelationType.ATTACK);
+	}
 	#region Controls
-	public void StartAction(int StarNumbers, ConstelationType type){
+	public void StartAction(int value, ConstelationType type){
 		switch (type) {
 		case ConstelationType.ATTACK:
+			StartAttack ();
 
 			break;
 		case ConstelationType.DEFENCE:
@@ -27,7 +31,7 @@ public class Heros : Perso {
 	#endregion Controls
 
 	#region Coroutine
-	public override IEnumerator BeingAttack(){
+	public override IEnumerator CoroutBeingAttack(){
 		
 		yield return new WaitForEndOfFrame ();
 		yield return new WaitForSeconds (this.GetComponent<Animator> ().GetCurrentAnimatorClipInfo (0).Length);

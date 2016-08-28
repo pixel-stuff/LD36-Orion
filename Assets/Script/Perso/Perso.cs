@@ -13,15 +13,6 @@ public abstract class Perso : MonoBehaviour {
 		m_pv = m_pvMax;
 		m_currentPercentLife = 100 * m_pv / m_pvMax;
 	}
-	// Use this for initialization
-	void Start () {
-
-	}
-
-	// Update is called once per frame
-	void Update () {
-
-	}
 
 	public void StartAttack(){
 		this.GetComponent<Animator> ().SetTrigger ("Attack");
@@ -30,10 +21,10 @@ public abstract class Perso : MonoBehaviour {
 	public void StartBeingAttack(int degat){
 		m_pv -= degat;
 		this.GetComponent<Animator> ().SetTrigger ("BeingAttack");
-		StartCoroutine (BeingAttack ());
+		StartCoroutine (CoroutBeingAttack ());
 	}
 
 	#region Coroutine
-	public abstract IEnumerator BeingAttack ();
+	public abstract IEnumerator CoroutBeingAttack ();
 	#endregion Coroutine
 }
