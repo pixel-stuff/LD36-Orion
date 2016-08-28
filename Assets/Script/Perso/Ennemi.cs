@@ -3,12 +3,22 @@ using System.Collections;
 using UnityEngine.UI;
 using System;
 
+public enum EnnemiType{
+	Generique, 
+	Spectral,
+	Poison
+}
+
 public class Ennemi : Perso {
 
 	[Header("Ennemi")]
 	public Sprite[] m_ennemiState;
 	public int m_powerAttack = 51;
 	public Action OnDeadEvent;
+	public EnnemiType m_ennemiType  = EnnemiType.Generique;
+	public AudioClip m_apparitionSound;
+	public AudioClip m_attackSound;
+	public AudioClip m_deathSound;
 
 	public void StarEnnemi(){
 		m_pv = m_pvMax;
@@ -27,9 +37,9 @@ public class Ennemi : Perso {
 		int lastIndex = m_ennemiState.Length - 1 - (int)m_currentPercentLife/((int)m_pvMax / m_ennemiState.Length);
 		int newIndex = m_ennemiState.Length - 1 - (int)newPercent/((int)m_pvMax / m_ennemiState.Length);
 
-		/*if (lastIndex != newIndex && newIndex >= 0) {
+		if (lastIndex != newIndex && newIndex >= 0) {
 			this.GetComponent<Image>().sprite = m_ennemiState [newIndex];
-		}*/
+		}
 		m_currentPercentLife = newPercent;
 	}
 

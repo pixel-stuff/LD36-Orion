@@ -10,7 +10,6 @@ public abstract class Perso : MonoBehaviour {
 	protected float m_currentPercentLife;
 	protected int m_coeffDef = 1;
 	void Awake(){
-		Debug.Log ("Awake");
 		m_pv = m_pvMax;
 		m_currentPercentLife = 100 * m_pv / m_pvMax;
 	}
