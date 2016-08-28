@@ -49,8 +49,8 @@ public class ConstelationStar : MonoBehaviour {
 				}
 				break;
 			case StarStates.OVER:
-				star.GetComponent < UnityEngine.UI.Image> ().sprite = ActivateSprite;
-				StartCoroutine (Pulse (InitialScale + OverStateScaleAddition, 0.3f, 0.8f));
+				star.GetComponent < UnityEngine.UI.Image> ().sprite = IdleSprite;
+				//StartCoroutine (Pulse (InitialScale + OverStateScaleAddition, 0.3f, 0.8f));
 				if (rotationEnumeration != null) {
 					StopCoroutine (rotationEnumeration);
 				}

@@ -94,8 +94,12 @@ MonoBehaviour:
   - star: {fileID: 0}
     links:
     - {fileID: 0}
+  LinkPrefab: {fileID: 1000014209819676, guid: 0a1c295536ee04a50840f344ebb690a6, type: 2}
+  listLinks: []
   startStar: {fileID: 0}
   ConstelationImage: {fileID: 114000011930869082}
+  constelationType: 0
+  constelationStrength: 2
   maxAlpha: 0.6
   NBActivateStar: 0
   NBStar: 0
