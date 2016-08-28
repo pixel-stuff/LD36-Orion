@@ -82,20 +82,23 @@ public class StarTools : MonoBehaviour {
         GL.Color(Color.white);
         GL.PushMatrix();
         //GL.LoadIdentity();
-        bool d3d = SystemInfo.graphicsDeviceVersion.IndexOf("Direct3D") > -1;
-        Matrix4x4 M = transform.localToWorldMatrix;
-        Matrix4x4 V = Camera.current.worldToCameraMatrix;
-        Matrix4x4 P = Camera.current.projectionMatrix;
-        if (d3d)
+        if (Application.platform == RuntimePlatform.WindowsPlayer)
         {
-            // Invert Y for rendering to a render texture
-            for (int i = 0; i < 4; i++) { P[1, i] = -P[1, i]; }
-            // Scale and bias from OpenGL -> D3D depth range
-            for (int i = 0; i < 4; i++) { P[2, i] = P[2, i] * 0.5f + P[3, i] * 0.5f; }
+            bool d3d = SystemInfo.graphicsDeviceVersion.IndexOf("Direct3D") > -1;
+            Matrix4x4 M = transform.localToWorldMatrix;
+            Matrix4x4 V = Camera.current.worldToCameraMatrix;
+            Matrix4x4 P = Camera.current.projectionMatrix;
+            if (d3d)
+            {
+                // Invert Y for rendering to a render texture
+                for (int i = 0; i < 4; i++) { P[1, i] = -P[1, i]; }
+                // Scale and bias from OpenGL -> D3D depth range
+                for (int i = 0; i < 4; i++) { P[2, i] = P[2, i] * 0.5f + P[3, i] * 0.5f; }
+            }
+            Matrix4x4 MVP = P * V * M;
+            //GL.MultMatrix(Matrix4x4.TRS(Camera.main.transform.position, Camera.main.transform.rotation, Camera.main.transform.localScale));
+            GL.LoadProjectionMatrix(MVP);
         }
-        Matrix4x4 MVP = P * V * M;
-        //GL.MultMatrix(Matrix4x4.TRS(Camera.main.transform.position, Camera.main.transform.rotation, Camera.main.transform.localScale));
-        GL.LoadProjectionMatrix(MVP);
         //GL.LoadPixelMatrix();
         //GL.MultMatrix(MVP);
         // GL.MultMatrix(GL.GetGPUProjectionMatrix(Camera.current.projectionMatrix, false) );
