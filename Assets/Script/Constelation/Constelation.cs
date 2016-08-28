@@ -18,7 +18,8 @@ public class Constelation : MonoBehaviour {
 
 	public List<ConstelationNode> constelation;
 	// Use this for initialization
-	public List<Link> links;
+	public GameObject LinkPrefab;
+	public List<Link> listLinks;
 
 	public ConstelationStar startStar= null;
 
@@ -95,11 +96,16 @@ public class Constelation : MonoBehaviour {
 
 
 	void ConstelationFinish() {
+		foreach (Link c in listLinks) {
+			c.Reussite ();
+		}
+		listLinks.Clear ();
 		foreach (ConstelationNode c in constelation) {
 			c.star.state = StarStates.OVER;
 		}
-		StartCoroutine(DestructIn( TimeAtOver));
-		//TODO set value to player
+		destructConstelation ();
+		//StartCoroutine(DestructIn( TimeAtOver));
+		//GameObject.FindObjectOfType<Heros>().StartAction(constelationStrength,constelationType);
 	}
 
 	void OnDestroy() {
@@ -110,6 +116,10 @@ public class Constelation : MonoBehaviour {
 	void destructConstelation (){
 		StarTools.Clear ();
 		StarTools.DrawFromStarToMouse (false, Vector3.zero, Vector3.zero);
+		foreach (Link c in listLinks) {
+			c.Destruct ();
+		}
+		listLinks.Clear ();
 		foreach (ConstelationNode c in constelation) {
 			c.star.state = StarStates.IDLE;
 		}
@@ -148,6 +158,12 @@ public class Constelation : MonoBehaviour {
 				var links = GetLinkForStar (startStar);
 				if (links != null && links.Contains (star)) {//if la star est dans les lien
 					StarTools.AddLine (startStar, star);
+					var link = Instantiate (LinkPrefab);
+					var linkScript = link.GetComponent<Link> ();
+					linkScript.sourceStar = startStar;
+					linkScript.targetStar = star;
+					linkScript.Init ();
+					listLinks.Add (linkScript);
 					Debug.Log ("ADDLINE");
 			
 					// all link Show to Iddle
