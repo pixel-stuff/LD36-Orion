@@ -13,39 +13,45 @@ public class ConstelationStar : MonoBehaviour {
 	public Constelation starConstelation;
 
 	public StarStates _state = StarStates.IDLE;
-
+	public GameObject star;
 	private IEnumerator rotationEnumeration = null;
 	public ParticleSystem overParticule;
+	private float InitialScale = 1;
+	public float ShowStateScaleAddition = 0.5f;
+	public float OverStateScaleAddition = 1f;
+	public Sprite ActivateSprite;
+	private Sprite IdleSprite;
 	public StarStates state { 
 		get{return _state;}
 		set{ 
 			switch (value) {
 			case StarStates.ACTIVATE:
-				this.GetComponent < UnityEngine.UI.Image> ().color = Color.red;
-				this.transform.localScale = new Vector3 (1, 1, 1);
+				star.GetComponent < UnityEngine.UI.Image> ().sprite = ActivateSprite;
+				//todo change image
+				star.transform.localScale = new Vector3 (InitialScale, InitialScale, 1);
 				if (rotationEnumeration != null) {
 					StopCoroutine (rotationEnumeration);
 				}
-				rotationEnumeration = Rotate (10.0f);
+				rotationEnumeration = Rotate (3.0f);
 				StartCoroutine (rotationEnumeration);
 				break;
 			case StarStates.IDLE:
-				this.GetComponent < UnityEngine.UI.Image> ().color = Color.white;
-				this.transform.localScale = new Vector3 (1, 1, 1);
+				star.GetComponent < UnityEngine.UI.Image> ().sprite = IdleSprite;
+				star.transform.localScale = new Vector3 (InitialScale, InitialScale, 1);
 				if (rotationEnumeration != null) {
 					StopCoroutine (rotationEnumeration);
 				}
 				break;
 			case StarStates.SHOW:
-				this.GetComponent < UnityEngine.UI.Image> ().color = Color.white;
-				this.transform.localScale = new Vector3 (1.5f, 1.5f, 1);
+				star.GetComponent < UnityEngine.UI.Image> ().sprite = IdleSprite;
+				star.transform.localScale = new Vector3 (InitialScale + ShowStateScaleAddition, InitialScale + ShowStateScaleAddition, 1);
 				if (rotationEnumeration != null) {
 					StopCoroutine (rotationEnumeration);
 				}
 				break;
 			case StarStates.OVER:
-				this.GetComponent < UnityEngine.UI.Image> ().color = Color.blue;
-				StartCoroutine (Pulse (2f, 0.3f, 0.8f));
+				star.GetComponent < UnityEngine.UI.Image> ().sprite = ActivateSprite;
+				StartCoroutine (Pulse (InitialScale + OverStateScaleAddition, 0.3f, 0.8f));
 				if (rotationEnumeration != null) {
 					StopCoroutine (rotationEnumeration);
 				}
@@ -59,32 +65,33 @@ public class ConstelationStar : MonoBehaviour {
 		while(true)
 		{
 			Vector3 newRotation = new Vector3 (0,0,aValue);
-			this.transform.Rotate( newRotation);
+			star.transform.Rotate( newRotation);
 			yield return null;
 		}
 	}
 
 	IEnumerator Pulse(float aValue, float aTime,float bTime)
 	{
-		float scale = this.transform.localScale.x;
+		float scale = star.transform.localScale.x;
 		for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / aTime)
 		{
 			Vector3 newScale = new Vector3 (Mathf.Lerp (scale, aValue, t),Mathf.Lerp (scale, aValue, t),1);
-			this.transform.localScale = newScale;
+			star.transform.localScale = newScale;
 			yield return null;
 		}
 
 		for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / bTime)
 		{
 			Vector3 newScale = new Vector3 (Mathf.Lerp (aValue, scale, t),Mathf.Lerp (aValue, scale, t),1);
-			this.transform.localScale = newScale;
+			star.transform.localScale = newScale;
 			yield return null;
 		}
 	}
 
 	// Use this for initialization
 	void Start () {
-	
+		InitialScale = star.transform.localScale.x;
+		IdleSprite = star.GetComponent < UnityEngine.UI.Image> ().sprite;
 	}
 	
 	// Update is called once per frame
