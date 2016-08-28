@@ -10,6 +10,10 @@ public class Heros : Perso {
 
 	public Sprite[] m_braceletState;
 
+	public AudioClip m_attackSound;
+	public AudioClip m_healSound;
+	public AudioClip m_defenseSound;
+
 
 	void Update(){
 		if (Input.GetKeyDown(KeyCode.Space)) {
@@ -18,17 +22,21 @@ public class Heros : Perso {
 	}
 	#region Controls
 	public void StartAction(int value, ConstelationType type){
-		Debug.Log ("coucoxhvodshngpzenv");
 		switch (type) {
 		case ConstelationType.ATTACK:
-			this.StartAttack ();
+			this.GetComponent<AudioSource> ().clip = m_attackSound;
+			this.GetComponent<AudioSource> ().Play ();
 			StartCoroutine (CoroutAttack (value));
 			break;
 		case ConstelationType.DEFENCE:
+			this.GetComponent<AudioSource> ().clip = m_defenseSound;
+			this.GetComponent<AudioSource> ().Play ();
 			this.m_coeffDef = 2;
 		break;
 		case ConstelationType.HEAL:
-			
+			this.GetComponent<AudioSource> ().clip = m_healSound;
+			this.GetComponent<AudioSource> ().Play ();
+			this.m_pv += value;
 			break;
 		}
 	}
@@ -36,6 +44,7 @@ public class Heros : Perso {
 
 	#region Coroutine
 	public IEnumerator CoroutAttack(int value){
+		this.StartAttack ();
 		yield return new WaitForSeconds (0.3f);
 		FindObjectOfType<EnnemiManager> ().EnnemiBeingAttack(value);
 	}
@@ -50,9 +59,9 @@ public class Heros : Perso {
 		int lastIndex = m_braceletState.Length - 1 - (int)m_currentPercentLife/((int)m_pvMax / m_braceletState.Length);
 		int newIndex = m_braceletState.Length - 1 - (int)newPercent/((int)m_pvMax / m_braceletState.Length);
 
-		/*if (lastIndex != newIndex && newIndex >= 0) {
+		if (lastIndex != newIndex && newIndex >= 0) {
 			m_bracelet.sprite = m_braceletState [newIndex];
-		}*/
+		}
 		m_currentPercentLife = newPercent;
 
 
