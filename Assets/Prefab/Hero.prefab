@@ -23,6 +23,8 @@ GameObject:
   - 114: {fileID: 114000012434280418}
   - 95: {fileID: 95000011307564098}
   - 114: {fileID: 114000010200453416}
+  - 58: {fileID: 58000013811144642}
+  - 50: {fileID: 50000010489377814}
   m_Layer: 5
   m_Name: Hero
   m_TagString: Untagged
@@ -30,6 +32,37 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!50 &50000010489377814
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014142652306}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &58000013811144642
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014142652306}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!95 &95000011307564098
 Animator:
   serializedVersion: 3
@@ -55,7 +88,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000014142652306}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c817d96d58934df190efeac123c1a01, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e94f41677ce245e7ad6da3d9e6a06e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_pv: 0
