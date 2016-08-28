@@ -2,39 +2,13 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class EnnemiManager : MonoBehaviour {
+public class Ennemi : Perso {
 
-	private int m_pvMax = 100;
-	public int m_pv = 0;
-	private float m_currentPercentLife;
-
+	[Header("Ennemi")]
 	public Sprite[] m_ennemiState;
 
-	void Awake(){
-		m_pv = m_pvMax;
-	}
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
-	public void StartAttack(){
-		this.GetComponent<Animator> ().SetTrigger ("Attack");
-	}
-
-	public void StartBeingAttack(int degat){
-		m_pv -= degat;
-		this.GetComponent<Animator> ().SetTrigger ("BeingAttack");
-		StartCoroutine (BeingAttack ());
-	}
-
 	#region Coroutine
-	public IEnumerator BeingAttack(){
+	public override IEnumerator BeingAttack(){
 
 		yield return new WaitForEndOfFrame ();
 		yield return new WaitForSeconds (this.GetComponent<Animator> ().GetCurrentAnimatorClipInfo (0).Length);

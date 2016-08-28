@@ -100,8 +100,8 @@ GameObject:
   - 224: {fileID: 29943004}
   - 222: {fileID: 29943006}
   - 114: {fileID: 29943005}
-  - 114: {fileID: 29943007}
   - 95: {fileID: 29943008}
+  - 114: {fileID: 29943007}
   m_Layer: 5
   m_Name: Monster
   m_TagString: Untagged
@@ -168,10 +168,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 29943003}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b921f4ae91944ec0be61705c6b06c5f, type: 3}
+  m_Script: {fileID: 11500000, guid: af1ded6fba1b84e9994ee41c91a2a4f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_pv: 100
+  m_pv: 0
   m_ennemiState: []
 --- !u!95 &29943008
 Animator:
@@ -333,7 +333,7 @@ GameObject:
   - 95: {fileID: 906953777}
   - 114: {fileID: 906953778}
   m_Layer: 5
-  m_Name: Perso
+  m_Name: Hero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -415,10 +415,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 906953773}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8731c9d24779644a18df6f808111a0ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c817d96d58934df190efeac123c1a01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_pv: 100
+  m_pv: 0
   m_bracelet: {fileID: 1387735156}
   m_braceletState: []
 --- !u!1 &953159366

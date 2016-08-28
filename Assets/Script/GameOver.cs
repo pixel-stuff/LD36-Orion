@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour {
 
-	// Use this for initialization
+
 	public void StartGameOverAnimation () {
 		StartCoroutine (FadeOutAnim ());
 	}
+
+
 
 	#region Coroutine
 	public IEnumerator FadeOutAnim(){
@@ -19,6 +22,7 @@ public class GameOver : MonoBehaviour {
 			this.GetComponent<Image>().color = col;
 			yield return new WaitForEndOfFrame();
 		}while(alpha <= 1.0f);
+		SceneManager.LoadScene ("GameOverScene");
 	}
 	#endregion Coroutine
 }
