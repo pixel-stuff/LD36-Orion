@@ -5,15 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour {
 
-
 	public void StartGameOverAnimation () {
-		StartCoroutine (FadeOutAnim ());
+		StartCoroutine (CoroutFadeOutAnim ());
 	}
 
 
 
 	#region Coroutine
-	public IEnumerator FadeOutAnim(){
+	public IEnumerator CoroutFadeOutAnim(){
 		float alpha = 0;
 		Color col = this.GetComponent<Image>().color;
 		do{

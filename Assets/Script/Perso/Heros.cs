@@ -17,12 +17,11 @@ public class Heros : Perso {
 	public void StartAction(int value, ConstelationType type){
 		switch (type) {
 		case ConstelationType.ATTACK:
-			StartAttack ();
-
+			this.StartAttack ();
+			FindObjectOfType<Ennemi> ().StartBeingAttack (value);
 			break;
 		case ConstelationType.DEFENCE:
-
-			break;
+		break;
 		case ConstelationType.HEAL:
 
 			break;
