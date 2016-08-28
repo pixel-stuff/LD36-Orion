@@ -143,7 +143,7 @@ MonoBehaviour:
   overParticule: {fileID: 198000010779901450}
   ShowStateScaleAddition: 0.5
   OverStateScaleAddition: 1
-  ActivateSprite: {fileID: 21300000, guid: df7ae9819608d4bdcb7b80111e684963, type: 3}
+  ActivateSprite: {fileID: 21300000, guid: f3b1dc2a6d3794ba6b025a8e982401ac, type: 3}
 --- !u!114 &114000012034275622
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5676,6 +5676,6 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -241, y: 7}
+  m_AnchoredPosition: {x: -57, y: -78}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
