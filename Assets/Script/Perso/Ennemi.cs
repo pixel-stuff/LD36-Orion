@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
 
 public class Ennemi : Perso {
 
 	[Header("Ennemi")]
 	public Sprite[] m_ennemiState;
-
 	public int m_powerAttack = 51;
+	public Action OnDeadEvent;
 
-	void Start(){
-		StartCoroutine(CoroutLogiqueEnnemi());
+	public void StarEnnemi(){
+		m_pv = m_pvMax;
+		m_currentPercentLife = 100 * m_pv / m_pvMax;
+		StartCoroutine (CoroutSpawnAnimation ());
 	}
 	#region Coroutine
 	public override IEnumerator CoroutBeingAttack(){
@@ -29,6 +32,15 @@ public class Ennemi : Perso {
 		m_currentPercentLife = newPercent;
 	}
 
+	public IEnumerator CoroutSpawnAnimation(){
+		StartSpawn ();
+		yield return new WaitForEndOfFrame ();
+		yield return new WaitForSeconds (this.GetComponent<Animator> ().GetCurrentAnimatorClipInfo(0) [0].clip.length);
+
+		StartCoroutine (CoroutLogiqueEnnemi());
+
+	}
+
 	public IEnumerator CoroutLogiqueEnnemi(){
 		float lastAttack = Time.time;
 		do{
@@ -39,7 +51,17 @@ public class Ennemi : Perso {
 				FindObjectOfType<Heros>().StartBeingAttack(m_powerAttack);
 			}
 			yield return new WaitForEndOfFrame();
-		}while(GameStateManager.getGameState() != GameState.GameOver);
+		}while(GameStateManager.getGameState() != GameState.GameOver && m_pv > 0);
+
+		if (m_pv <= 0) {
+			StartDeath ();
+			yield return new WaitForEndOfFrame ();
+			yield return new WaitForSeconds (this.GetComponent<Animator> ().GetCurrentAnimatorClipInfo (0) [0].clip.length);
+
+			if (OnDeadEvent != null) {
+				OnDeadEvent ();
+			}
+		}
 	}
 	#endregion Coroutine
 }

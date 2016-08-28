@@ -500,10 +500,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1000012481226108, guid: 639dcfade71ee4946a8666dbb252e2e0, type: 2}
-      propertyPath: m_Name
-      value: Argos
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 639dcfade71ee4946a8666dbb252e2e0, type: 2}
   m_IsPrefabParent: 0
@@ -512,23 +508,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224000011636191598, guid: 639dcfade71ee4946a8666dbb252e2e0,
     type: 2}
   m_PrefabInternal: {fileID: 694882976}
---- !u!1 &694882978 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000010657417714, guid: 639dcfade71ee4946a8666dbb252e2e0,
-    type: 2}
-  m_PrefabInternal: {fileID: 694882976}
---- !u!114 &694882979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 694882978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54203d0014bcf43cbb8cfdca290ced26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ennemis: []
 --- !u!114 &714696437 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000010877801120, guid: 7ef8bd13c7dca41daaeed8992e8f30d5,
@@ -1349,7 +1328,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 1977649215}
+  m_TargetTexture: {fileID: 1776329296}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -1370,6 +1349,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1227480257}
   m_RootOrder: 0
+--- !u!84 &1776329296
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 1334
+  m_Height: 750
+  m_AntiAliasing: 1
+  m_DepthFormat: 0
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 1
 --- !u!224 &1950164732 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224000011115972018, guid: a7d193944bf39434e9a1645328812095,
@@ -1409,28 +1410,6 @@ RectTransform:
   m_AnchoredPosition: {x: 97, y: -560}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!84 &1977649215
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 1334
-  m_Height: 750
-  m_AntiAliasing: 1
-  m_DepthFormat: 0
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 1
 --- !u!1001 &1997729742
 Prefab:
   m_ObjectHideFlags: 0

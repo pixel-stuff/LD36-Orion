@@ -32,7 +32,7 @@ public class Heros : Perso {
 	public override IEnumerator CoroutBeingAttack(){
 		
 		yield return new WaitForEndOfFrame ();
-		yield return new WaitForSeconds (this.GetComponent<Animator> ().GetCurrentAnimatorClipInfo (0).Length);
+		yield return new WaitForSeconds (this.GetComponent<Animator> ().GetCurrentAnimatorClipInfo (0)[0].clip.length);
 
 		float newPercent = m_pv * 100 / m_pvMax;
 
