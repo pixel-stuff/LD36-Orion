@@ -20,7 +20,7 @@ public class UIGameOverManager : MonoBehaviour {
 	
 	public void ReturnToLevelScene(){
 		GameStateManager.setGameState (GameState.Playing);
-		Application.LoadLevelAsync ("LevelScene");
+		Application.LoadLevelAsync ("SceneMathias");
 		
 	}
 }

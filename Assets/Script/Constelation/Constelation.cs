@@ -18,6 +18,7 @@ public class Constelation : MonoBehaviour {
 
 	public List<ConstelationNode> constelation;
 	// Use this for initialization
+	public List<Link> links;
 
 	public ConstelationStar startStar= null;
 
@@ -45,14 +46,16 @@ public class Constelation : MonoBehaviour {
 		if (startStar != null && !Input.GetMouseButton(0) && NBActivateStar != NBStar) {
 			destructConstelation ();
 		}
-		if (startStar != null && Input.GetMouseButton (0)) {
-		
-			Vector3 mousePosition = Input.mousePosition;
-			Vector3 pz = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			pz.z = 0;
-			// DEBUG startStar.transform.position = pz;
+		if (startStar != null && Input.GetMouseButton (0) ) {
+			if (NBActivateStar != NBStar) {
+				Vector3 mousePosition = Input.mousePosition;
+				Vector3 pz = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+				pz.z = 0;
+				StarTools.DrawFromStarToMouse (true, startStar.transform.position, pz);
+			} else {
+				StarTools.DrawFromStarToMouse (false, Vector3.zero, Vector3.zero);
+			}
 
-		//TODO draw line between mouse and star
 		}
 	}
 
@@ -99,8 +102,14 @@ public class Constelation : MonoBehaviour {
 		//TODO set value to player
 	}
 
+	void OnDestroy() {
+	
+		destructConstelation ();
+	}
+
 	void destructConstelation (){
-		//TODO destroyConstellation
+		StarTools.Clear ();
+		StarTools.DrawFromStarToMouse (false, Vector3.zero, Vector3.zero);
 		foreach (ConstelationNode c in constelation) {
 			c.star.state = StarStates.IDLE;
 		}
@@ -162,8 +171,6 @@ public class Constelation : MonoBehaviour {
 						NBActivateStar++;
 						UpdateActivateStar ();
 					}
-
-
 				} else {
 					destructConstelation ();
 				}

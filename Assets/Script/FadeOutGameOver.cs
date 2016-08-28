@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class FadeOutGameOver : MonoBehaviour {
 
@@ -11,11 +12,18 @@ public class FadeOutGameOver : MonoBehaviour {
 	}
 
 	public void StartGameOverAnimation (GameState newState) {
+		try{
 		if (newState == GameState.GameOver) {
-			StartCoroutine (CoroutFadeOutAnim ());
+			StartCoroutine (this.CoroutFadeOutAnim ());
+		}
+		}catch(Exception e){
+			Debug.Log ("excep - > " + e.ToString());
 		}
 	}
 
+	void OnDestroy(){
+		GameStateManager.onChangeStateEvent -= StartGameOverAnimation;
+	}
 	#region Coroutine
 	public IEnumerator CoroutFadeOutAnim(){
 		float alpha = 0;
