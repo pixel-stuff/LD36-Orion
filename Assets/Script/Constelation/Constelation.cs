@@ -51,7 +51,7 @@ public class Constelation : MonoBehaviour {
 			if (NBActivateStar != NBStar) {
 				Vector3 mousePosition = Input.mousePosition;
 				Vector3 pz = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-				pz.z = 0;
+				pz.z = startStar.transform.position.z;
 				StarTools.DrawFromStarToMouse (true, startStar.transform.position, pz);
 			} else {
 				StarTools.DrawFromStarToMouse (false, Vector3.zero, Vector3.zero);
