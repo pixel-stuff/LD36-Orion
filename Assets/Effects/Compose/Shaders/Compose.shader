@@ -16,7 +16,8 @@
 			uniform float4 _Color;
 			fixed4 frag(v2f_img i) : COLOR
 			{
-				return tex2D(_MainTex, i.uv) + tex2D(_Addition, i.uv);
+				float2 uvadd = float2(i.uv.x, 1.0 - i.uv.y);
+				return tex2D(_MainTex, i.uv) + tex2D(_Addition, uvadd);
 			}
 		ENDCG
 		}
