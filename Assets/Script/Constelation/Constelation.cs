@@ -105,7 +105,7 @@ public class Constelation : MonoBehaviour {
 		}
 		destructConstelation ();
 		//StartCoroutine(DestructIn( TimeAtOver));
-		//GameObject.FindObjectOfType<Heros>().StartAction(constelationStrength,constelationType);
+		GameObject.FindObjectOfType<Heros>().StartAction(constelationStrength,constelationType);
 	}
 
 	void OnDestroy() {

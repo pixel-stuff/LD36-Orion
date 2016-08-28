@@ -15,6 +15,7 @@ public class Ennemi : Perso {
 		m_currentPercentLife = 100 * m_pv / m_pvMax;
 		StartCoroutine (CoroutSpawnAnimation ());
 	}
+
 	#region Coroutine
 	public override IEnumerator CoroutBeingAttack(){
 

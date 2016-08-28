@@ -11,12 +11,18 @@ public class Heros : Perso {
 	public Sprite[] m_braceletState;
 
 
+	void Update(){
+		if (Input.GetKeyDown(KeyCode.Space)) {
+			this.StartAction (12,ConstelationType.ATTACK);
+		}
+	}
 	#region Controls
 	public void StartAction(int value, ConstelationType type){
+		Debug.Log ("coucoxhvodshngpzenv");
 		switch (type) {
 		case ConstelationType.ATTACK:
 			this.StartAttack ();
-			FindObjectOfType<Ennemi> ().StartBeingAttack (value);
+			StartCoroutine (CoroutAttack (value));
 			break;
 		case ConstelationType.DEFENCE:
 			this.m_coeffDef = 2;
@@ -29,6 +35,11 @@ public class Heros : Perso {
 	#endregion Controls
 
 	#region Coroutine
+	public IEnumerator CoroutAttack(int value){
+		yield return new WaitForSeconds (0.3f);
+		FindObjectOfType<EnnemiManager> ().EnnemiBeingAttack(value);
+	}
+
 	public override IEnumerator CoroutBeingAttack(){
 		
 		yield return new WaitForEndOfFrame ();
