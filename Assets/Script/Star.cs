@@ -19,6 +19,6 @@ public class Star : MonoBehaviour {
 
     void Update()
     {
-        StarTools.DrawFromStarToMouse(true, starOne, mouse);
+        StarTools.DrawFromStarToMouse(true, starOne.transform.position, mouse);
     }
 }
