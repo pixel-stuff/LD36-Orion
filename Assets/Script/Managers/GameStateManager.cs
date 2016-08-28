@@ -32,17 +32,6 @@ public class GameStateManager : MonoBehaviour {
 	
 	public static Action<GameState> onChangeStateEvent;
 
-	// Use this for initialization
-	void Start () {
-	}
-
-
-	
-	// Update is called once per frame
-	void Update () {
-		Debug.Log ("GAME STATE : " + m_gameState);
-	}
-
 	public static GameState getGameState(){
 		return m_gameState;
 	}
