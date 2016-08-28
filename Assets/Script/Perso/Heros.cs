@@ -41,9 +41,9 @@ public class Heros : Perso {
 		int lastIndex = m_braceletState.Length - 1 - (int)m_currentPercentLife/((int)m_pvMax / m_braceletState.Length);
 		int newIndex = m_braceletState.Length - 1 - (int)newPercent/((int)m_pvMax / m_braceletState.Length);
 
-		if (lastIndex != newIndex) {
+		/*if (lastIndex != newIndex) {
 			m_bracelet.sprite = m_braceletState [newIndex];
-		}
+		}*/
 		m_currentPercentLife = newPercent;
 	}
 
