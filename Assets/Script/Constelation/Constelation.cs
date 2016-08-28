@@ -102,6 +102,11 @@ public class Constelation : MonoBehaviour {
 		//TODO set value to player
 	}
 
+	void OnDestroy() {
+	
+		destructConstelation ();
+	}
+
 	void destructConstelation (){
 		StarTools.Clear ();
 		StarTools.DrawFromStarToMouse (false, Vector3.zero, Vector3.zero);
