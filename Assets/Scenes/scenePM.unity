@@ -122,7 +122,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starConstelation: {fileID: 0}
   _state: 0
+  star: {fileID: 0}
   overParticule: {fileID: 0}
+  ShowStateScaleAddition: 0.5
+  OverStateScaleAddition: 1
+  ActivateSprite: {fileID: 0}
 --- !u!23 &197828197
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -279,7 +283,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starConstelation: {fileID: 0}
   _state: 0
+  star: {fileID: 0}
   overParticule: {fileID: 0}
+  ShowStateScaleAddition: 0.5
+  OverStateScaleAddition: 1
+  ActivateSprite: {fileID: 0}
 --- !u!23 &731000651
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -584,8 +592,8 @@ GameObject:
   - 81: {fileID: 1227480253}
   - 114: {fileID: 1227480260}
   - 114: {fileID: 1227480259}
-  - 114: {fileID: 1227480258}
   - 114: {fileID: 1227480261}
+  - 114: {fileID: 1227480258}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -670,10 +678,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1227480252}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1e1fb376fca93448a58ea995bec3b4, type: 3}
+  m_Script: {fileID: 11500000, guid: a9dda3b4e568441a8a7de47d94b89fa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shader: {fileID: 4800000, guid: 3910b928402dc9741a42ec94160bf693, type: 3}
+  _shader: {fileID: 4800000, guid: e62aea93c5ff0448391c2c7c29bcafb5, type: 3}
   _cam: {fileID: 1768455279}
   color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1227480259
@@ -765,7 +773,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starConstelation: {fileID: 0}
   _state: 0
+  star: {fileID: 0}
   overParticule: {fileID: 0}
+  ShowStateScaleAddition: 0.5
+  OverStateScaleAddition: 1
+  ActivateSprite: {fileID: 0}
 --- !u!23 &1560411902
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -881,7 +893,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starConstelation: {fileID: 0}
   _state: 0
+  star: {fileID: 0}
   overParticule: {fileID: 0}
+  ShowStateScaleAddition: 0.5
+  OverStateScaleAddition: 1
+  ActivateSprite: {fileID: 0}
 --- !u!23 &1598059690
 MeshRenderer:
   m_ObjectHideFlags: 0
