@@ -21,9 +21,10 @@ public class Heros : Perso {
 			FindObjectOfType<Ennemi> ().StartBeingAttack (value);
 			break;
 		case ConstelationType.DEFENCE:
+			this.m_coeffDef = 2;
 		break;
 		case ConstelationType.HEAL:
-
+			
 			break;
 		}
 	}
