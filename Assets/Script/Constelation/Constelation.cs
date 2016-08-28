@@ -23,6 +23,9 @@ public class Constelation : MonoBehaviour {
 
 	public UnityEngine.UI.Image ConstelationImage;
 
+	public ConstelationType constelationType = ConstelationType.ATTACK;
+	public int constelationStrength = 2;
+
 	public float maxAlpha= 30f;
 	public float NBActivateStar = 0;
 	public float NBStar = 0;
@@ -41,6 +44,15 @@ public class Constelation : MonoBehaviour {
 	void Update () {
 		if (startStar != null && !Input.GetMouseButton(0) && NBActivateStar != NBStar) {
 			destructConstelation ();
+		}
+		if (startStar != null && Input.GetMouseButton (0)) {
+		
+			Vector3 mousePosition = Input.mousePosition;
+			Vector3 pz = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			pz.z = 0;
+			// DEBUG startStar.transform.position = pz;
+
+		//TODO draw line between mouse and star
 		}
 	}
 
@@ -77,12 +89,14 @@ public class Constelation : MonoBehaviour {
 		}
 		destructConstelation ();
 	}
+
+
 	void ConstelationFinish() {
 		foreach (ConstelationNode c in constelation) {
 			c.star.state = StarStates.OVER;
 		}
 		StartCoroutine(DestructIn( TimeAtOver));
-
+		//TODO set value to player
 	}
 
 	void destructConstelation (){
