@@ -500,6 +500,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1000012481226108, guid: 639dcfade71ee4946a8666dbb252e2e0, type: 2}
+      propertyPath: m_Name
+      value: Argos
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 639dcfade71ee4946a8666dbb252e2e0, type: 2}
   m_IsPrefabParent: 0
@@ -508,6 +512,23 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224000011636191598, guid: 639dcfade71ee4946a8666dbb252e2e0,
     type: 2}
   m_PrefabInternal: {fileID: 694882976}
+--- !u!1 &694882978 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000010657417714, guid: 639dcfade71ee4946a8666dbb252e2e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 694882976}
+--- !u!114 &694882979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 694882978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54203d0014bcf43cbb8cfdca290ced26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ennemis: []
 --- !u!114 &714696437 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000010877801120, guid: 7ef8bd13c7dca41daaeed8992e8f30d5,

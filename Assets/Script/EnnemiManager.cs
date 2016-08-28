@@ -1,7 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnnemiManger : MonoBehaviour {
+public class EnnemiManager : MonoBehaviour {
+
+
+	[SerializeField]
+	private Ennemi[] m_ennemis;
+
 
 	// Use this for initialization
 	void Start () {
