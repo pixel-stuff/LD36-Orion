@@ -21,6 +21,8 @@ public class Ennemi : Perso {
 	public AudioClip m_deathSound;
 
 	public void StarEnnemi(){
+		this.GetComponent<AudioSource> ().clip = m_apparitionSound;
+		this.GetComponent<AudioSource> ().Play ();
 		m_pv = m_pvMax;
 		m_currentPercentLife = 100 * m_pv / m_pvMax;
 		StartCoroutine (CoroutSpawnAnimation ());
@@ -58,6 +60,8 @@ public class Ennemi : Perso {
 			if( (Time.time - lastAttack) >= 3.0f){
 				lastAttack = Time.time;
 				this.StartAttack();
+				this.GetComponent<AudioSource> ().clip = m_attackSound;
+				this.GetComponent<AudioSource> ().Play ();
 				yield return new WaitForSeconds(0.3f);
 				FindObjectOfType<Heros>().StartBeingAttack(m_powerAttack);
 			}
@@ -65,10 +69,15 @@ public class Ennemi : Perso {
 		}while(GameStateManager.getGameState() != GameState.GameOver && m_pv > 0);
 
 		if (m_pv <= 0) {
+			Debug.Log ("Start Death");
 			StartDeath ();
+			this.GetComponent<AudioSource> ().clip = m_deathSound;
+			this.GetComponent<AudioSource> ().Play ();
 			yield return new WaitForEndOfFrame ();
+			Debug.Log ("-> " + this.GetComponent<Animator> ().GetCurrentAnimatorClipInfo (0) [0].clip.length);
 			yield return new WaitForSeconds (this.GetComponent<Animator> ().GetCurrentAnimatorClipInfo (0) [0].clip.length);
 
+			Debug.Log ("Spend Event");
 			if (OnDeadEvent != null) {
 				OnDeadEvent ();
 			}

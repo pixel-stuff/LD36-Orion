@@ -10,10 +10,16 @@ public class Heros : Perso {
 
 	public Sprite[] m_braceletState;
 
+	public AudioClip m_apparitionSound;
 	public AudioClip m_attackSound;
 	public AudioClip m_healSound;
 	public AudioClip m_defenseSound;
 
+	void Start(){
+		this.GetComponent<Image> ().enabled = true;
+		this.GetComponent<AudioSource> ().clip = m_apparitionSound;
+		this.GetComponent<AudioSource> ().Play ();
+	}
 
 	void Update(){
 		if (Input.GetKeyDown(KeyCode.Space)) {
@@ -50,7 +56,21 @@ public class Heros : Perso {
 	}
 
 	public override IEnumerator CoroutBeingAttack(){
-		
+
+		int iteration = 4;
+		float timeToWait = 0.10f;
+		do{
+			if(iteration%2 == 0){
+				this.GetComponent<HeroBlink> ().SetBlinkColorAndOpacity (Color.white, 1.0f);
+				timeToWait = 0.20f;
+			}else{
+				this.GetComponent<HeroBlink> ().SetBlinkColorAndOpacity (Color.white, 0.0f);
+				timeToWait = 0.10f;
+			}
+			iteration--;
+			yield return new WaitForSeconds(timeToWait);
+		}while(iteration > 0);
+
 		yield return new WaitForEndOfFrame ();
 		yield return new WaitForSeconds (this.GetComponent<Animator> ().GetCurrentAnimatorClipInfo (0)[0].clip.length);
 
@@ -67,6 +87,8 @@ public class Heros : Perso {
 
 		if (m_pv <= 0) {
 			GameStateManager.setGameState (GameState.GameOver);
+		} else {
+			
 		}
 	}
 

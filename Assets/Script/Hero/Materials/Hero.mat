@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Hero
-  m_Shader: {fileID: 4800000, guid: a45eac6529b3ee146b2ed77796c2da1d, type: 3}
+  m_Shader: {fileID: 4800000, guid: 8fd92e1bbaaeb42a2ac950534f5923b7, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -75,7 +75,7 @@ Material:
       second: 0
     - first:
         name: _BlinkOpacity
-      second: -0.25
+      second: 0
     - first:
         name: _BumpScale
       second: 1

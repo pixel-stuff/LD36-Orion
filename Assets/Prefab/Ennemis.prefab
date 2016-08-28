@@ -57,8 +57,8 @@ GameObject:
   - 224: {fileID: 224000013508266510}
   - 222: {fileID: 222000012295320664}
   - 114: {fileID: 114000011768702722}
-  - 95: {fileID: 95000010845760250}
   - 114: {fileID: 114000010688476676}
+  - 95: {fileID: 95000010845760250}
   m_Layer: 5
   m_Name: Argos2
   m_TagString: Untagged
@@ -190,6 +190,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: bd1eadafde5bd4576a3027f1f9ec82e1, type: 3}
   - {fileID: 21300000, guid: 070d8c497908a40e197e5e7c6be476d9, type: 3}
   m_powerAttack: 20
+  m_ennemiType: 1
+  m_apparitionSound: {fileID: 8300000, guid: 4e53697c2ba494b6fbeecf09a4dd4d7e, type: 3}
+  m_attackSound: {fileID: 8300000, guid: ddd8c7370e8c64267bfe9b5407de9801, type: 3}
+  m_deathSound: {fileID: 8300000, guid: 1b5ab75da9d52442589b143f17294757, type: 3}
 --- !u!114 &114000010896091628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -274,6 +278,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9e52bcea8f10f4356ae85c5ff26c5137, type: 3}
   - {fileID: 21300000, guid: 2cc8d6e8194064dbe8174a1497b623e5, type: 3}
   m_powerAttack: 0
+  m_ennemiType: 2
+  m_apparitionSound: {fileID: 8300000, guid: b9a345b6565aa4a889b996f093a6eead, type: 3}
+  m_attackSound: {fileID: 8300000, guid: 48ff575736c394e308ef7fb0dcc0396d, type: 3}
+  m_deathSound: {fileID: 8300000, guid: fb9110e195b7d44bf9f64700760eec3d, type: 3}
 --- !u!222 &222000012169856910
 CanvasRenderer:
   m_ObjectHideFlags: 1
