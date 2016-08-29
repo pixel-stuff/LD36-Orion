@@ -40,6 +40,7 @@ GameObject:
   - 95: {fileID: 95000014182424460}
   - 114: {fileID: 114000014121539558}
   - 82: {fileID: 82000010458082680}
+  - 114: {fileID: 114000012302840960}
   m_Layer: 5
   m_Name: Argos
   m_TagString: Untagged
@@ -60,8 +61,9 @@ GameObject:
   - 114: {fileID: 114000010688476676}
   - 95: {fileID: 95000010845760250}
   - 82: {fileID: 82000012033686918}
+  - 114: {fileID: 114000010744337710}
   m_Layer: 5
-  m_Name: Argos2
+  m_Name: herimont
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -263,14 +265,26 @@ MonoBehaviour:
   m_pvMax: 100
   m_pv: 0
   m_ennemiState:
-  - {fileID: 21300000, guid: bd1eadafde5bd4576a3027f1f9ec82e1, type: 3}
-  - {fileID: 21300000, guid: 070d8c497908a40e197e5e7c6be476d9, type: 3}
+  - {fileID: 21300000, guid: 909f724d3ac4843028eebb9ec1cf93e2, type: 3}
+  - {fileID: 21300000, guid: 909f724d3ac4843028eebb9ec1cf93e2, type: 3}
   m_powerAttack: 10
   m_timeBetweenAttack: 6
   m_ennemiType: 1
   m_apparitionSound: {fileID: 8300000, guid: 4e53697c2ba494b6fbeecf09a4dd4d7e, type: 3}
   m_attackSound: {fileID: 8300000, guid: ddd8c7370e8c64267bfe9b5407de9801, type: 3}
   m_deathSound: {fileID: 8300000, guid: 1b5ab75da9d52442589b143f17294757, type: 3}
+--- !u!114 &114000010744337710
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012481226108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a446c9b3b43c54fe0a878177a8ea665a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mat: {fileID: 2100000, guid: 34dd538ef0d91424d9fbf38c9d37f994, type: 2}
 --- !u!114 &114000010896091628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -296,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: e95257101bdec426691258cd8d3cc019, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
@@ -323,7 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 34dd538ef0d91424d9fbf38c9d37f994, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
@@ -339,6 +353,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114000012302840960
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011905849894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a446c9b3b43c54fe0a878177a8ea665a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mat: {fileID: 2100000, guid: e95257101bdec426691258cd8d3cc019, type: 2}
 --- !u!114 &114000014121539558
 MonoBehaviour:
   m_ObjectHideFlags: 1

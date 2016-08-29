@@ -33,6 +33,20 @@ public class Ennemi : Perso {
 	#region Coroutine
 	public override IEnumerator CoroutBeingAttack(){
 
+		int iteration = 4;
+		float timeToWait = 0.10f;
+		do{
+			if(iteration%2 == 0){
+				this.GetComponent<HeroBlink> ().SetBlinkColorAndOpacity (Color.white, 1.0f);
+				timeToWait = 0.20f;
+			}else{
+				this.GetComponent<HeroBlink> ().SetBlinkColorAndOpacity (Color.white, 0.0f);
+				timeToWait = 0.10f;
+			}
+			iteration--;
+			yield return new WaitForSeconds(timeToWait);
+		}while(iteration > 0);
+
 		yield return new WaitForEndOfFrame ();
 		yield return new WaitForSeconds (this.GetComponent<Animator> ().GetCurrentAnimatorClipInfo (0).Length);
 
