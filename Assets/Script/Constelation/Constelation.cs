@@ -281,6 +281,12 @@ public class Constelation : MonoBehaviour {
 						UpdateActivateStar ();
 					}
 				} else {
+					var link = Instantiate (LinkPrefab);
+					var linkScript = link.GetComponent<Link> ();
+					linkScript.sourceStar = startStar;
+					linkScript.targetStar = star;
+					linkScript.Init ();
+					linkScript.Destruct ();
 					destructConstelation ();
 					PlayCastFail ();
 					StarTools.Clear ();
