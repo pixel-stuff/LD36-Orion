@@ -698,6 +698,28 @@ WindZone:
   m_WindTurbulence: 1
   m_WindPulseMagnitude: 20
   m_WindPulseFrequency: 0.01
+--- !u!84 &1144016711
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 1042
+  m_Height: 586
+  m_AntiAliasing: 1
+  m_DepthFormat: 0
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 1
 --- !u!1 &1227480252
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,7 +824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shader: {fileID: 4800000, guid: e62aea93c5ff0448391c2c7c29bcafb5, type: 3}
   _cam: {fileID: 1768455279}
-  color: {r: 0.99264705, g: 0, b: 0, a: 1}
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1227480259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1202,7 +1224,7 @@ MonoBehaviour:
   m_size: 0.012
   mat: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   _MainColor: {r: 1, g: 1, b: 1, a: 1}
-  _SecondaryColor: {r: 1, g: 1, b: 1, a: 1}
+  _SecondaryColor: {r: 0.7793107, g: 0, b: 1, a: 1}
 --- !u!114 &1768455277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1293,7 +1315,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 1941122989}
+  m_TargetTexture: {fileID: 1144016711}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -1423,28 +1445,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1377586072}
   m_Script: {fileID: 11500000, guid: d7176de5a49b94f5bb3d6f444f175ade, type: 3}
---- !u!84 &1941122989
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 1042
-  m_Height: 586
-  m_AntiAliasing: 1
-  m_DepthFormat: 0
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 1
 --- !u!224 &1950164732 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224000011115972018, guid: a7d193944bf39434e9a1645328812095,

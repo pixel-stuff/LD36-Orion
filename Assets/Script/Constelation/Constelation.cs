@@ -229,9 +229,10 @@ public class Constelation : MonoBehaviour {
 		
 		if(NBActivateStar != NBStar) {
 			if (startStar != null && star != startStar) {
-				PlayStarSound ();
+				
 				var links = GetLinkForStar (startStar);
 				if (links != null && links.Contains (star)) {//if la star est dans les lien
+					PlayStarSound ();
 					StarTools.AddLine (startStar, star);
 					var link = Instantiate (LinkPrefab);
 					var linkScript = link.GetComponent<Link> ();
