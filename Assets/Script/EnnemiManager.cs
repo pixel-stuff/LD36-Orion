@@ -7,6 +7,7 @@ public class EnnemiManager : MonoBehaviour {
 	[SerializeField]
 	private Ennemi[] m_ennemis;
 	private int m_currentEnnemi = -1;
+	int nbEnnemi = 1;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +20,9 @@ public class EnnemiManager : MonoBehaviour {
 
 
 	public void DisplayNextEnnemi(){
+		if (nbEnnemi > 4) {
+			GameStateManager.setGameState (GameState.GameOver);
+		}
 		if (m_currentEnnemi > -1) {
 			m_ennemis [m_currentEnnemi].gameObject.SetActive (false);
 			m_ennemis [m_currentEnnemi].transform.localScale = Vector3.one;
@@ -27,6 +31,7 @@ public class EnnemiManager : MonoBehaviour {
 		if (m_currentEnnemi >= m_ennemis.Length) {
 			m_currentEnnemi = 0;
 		}
+		nbEnnemi++;
 		m_ennemis [m_currentEnnemi].gameObject.SetActive (true);
 		m_ennemis [m_currentEnnemi].StarEnnemi ();
 	}
