@@ -125,6 +125,7 @@ public class Constelation : MonoBehaviour {
 		}
 		listLinks.Clear ();
 		StarTools.Clear ();
+		destructConstelation ();
 	}
 
 
@@ -137,7 +138,7 @@ public class Constelation : MonoBehaviour {
 			c.star.state = StarStates.OVER;
 		}
 		StopMouseSound ();
-		destructConstelation ();
+
 		StartCoroutine(ClearLineIn( TimeAtOver));
 		if (IsTuto) {
 		}
