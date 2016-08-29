@@ -44,7 +44,7 @@ public class Link : MonoBehaviour {
 		Debug.Log ("Reussite");
 		reussite.Play ();
 		activate.Stop ();
-		StartCoroutine(DestructIn (4f));
+	//	StartCoroutine(DestructIn (4f));
 	}
 
 	IEnumerator DestructIn( float aTime)

@@ -47,6 +47,12 @@ public class Constelation : MonoBehaviour {
 		if (startStar != null && !Input.GetMouseButton(0) && NBActivateStar != NBStar) {
 			destructConstelation ();
 			StarTools.Clear ();
+			foreach (Link c in listLinks) {
+				c.Destruct ();
+			}
+
+			listLinks.Clear ();
+
 		}
 		if (startStar != null && Input.GetMouseButton (0) ) {
 			if (NBActivateStar != NBStar) {
@@ -94,6 +100,11 @@ public class Constelation : MonoBehaviour {
 		}
 		destructConstelation ();
 		StarTools.Clear ();
+		foreach (Link c in listLinks) {
+			c.Destruct ();
+		}
+
+		listLinks.Clear ();
 	}
 
 	IEnumerator ClearLineIn( float aTime)
@@ -102,6 +113,10 @@ public class Constelation : MonoBehaviour {
 		{
 			yield return null;
 		}
+		foreach (Link c in listLinks) {
+			c.Destruct ();
+		}
+		listLinks.Clear ();
 		StarTools.Clear ();
 	}
 
@@ -111,7 +126,6 @@ public class Constelation : MonoBehaviour {
 		foreach (Link c in listLinks) {
 			c.Reussite ();
 		}
-		listLinks.Clear ();
 		foreach (ConstelationNode c in constelation) {
 			c.star.state = StarStates.OVER;
 		}
@@ -124,15 +138,17 @@ public class Constelation : MonoBehaviour {
 	
 		destructConstelation ();
 		StarTools.Clear ();
+		foreach (Link c in listLinks) {
+			c.Destruct ();
+		}
+
+		listLinks.Clear ();
 	}
 
 	void destructConstelation (){
 		
 		StarTools.DrawFromStarToMouse (false, Vector3.zero, Vector3.zero);
-		foreach (Link c in listLinks) {
-			c.Destruct ();
-		}
-		listLinks.Clear ();
+
 		foreach (ConstelationNode c in constelation) {
 			c.star.state = StarStates.IDLE;
 		}
@@ -203,6 +219,11 @@ public class Constelation : MonoBehaviour {
 				} else {
 					destructConstelation ();
 					StarTools.Clear ();
+					foreach (Link c in listLinks) {
+						c.Destruct ();
+					}
+
+					listLinks.Clear ();
 				}
 			}
 				
