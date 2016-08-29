@@ -37,6 +37,7 @@ public class Constelation : MonoBehaviour {
 
 	public List<AudioClip> starsSound;
 	private int NBTouchStar;
+	private IEnumerator MouseSoundEnumerator;
 
 	private IEnumerator FadeEnumeration = null;
 	void Start () {
@@ -54,7 +55,7 @@ public class Constelation : MonoBehaviour {
 			foreach (Link c in listLinks) {
 				c.Destruct ();
 			}
-
+			StopMouseSound ();
 			listLinks.Clear ();
 
 		}
@@ -133,6 +134,7 @@ public class Constelation : MonoBehaviour {
 		foreach (ConstelationNode c in constelation) {
 			c.star.state = StarStates.OVER;
 		}
+		StopMouseSound ();
 		destructConstelation ();
 		StartCoroutine(ClearLineIn( TimeAtOver));
 		GameObject.FindObjectOfType<Heros>().StartAction(constelationStrength,constelationType);
@@ -159,6 +161,7 @@ public class Constelation : MonoBehaviour {
 		startStar = null;
 		NBActivateStar = 0;
 		UpdateActivateStar ();
+		StopMouseSound ();
 	}
 		
 	public List<ConstelationStar> GetLinkForStar(ConstelationStar star){
@@ -171,10 +174,40 @@ public class Constelation : MonoBehaviour {
 	}
 
 	public void PlayStarSound(){
-		AudioSource audio = this.GetComponent<AudioSource> ();
+		AudioSource audio = this.GetComponents<AudioSource> ()[0];
 		audio.PlayOneShot (starsSound [NBTouchStar % starsSound.Count]);
 		NBTouchStar++;
+		StopMouseSound ();
+		StartMouseSound ();
 	}
+
+	public void StartMouseSound(){
+		AudioSource audio = this.GetComponents<AudioSource> ()[1];
+		audio.Play ();
+		MouseSoundEnumerator = AsyncStartMouseEffect ();
+		StartCoroutine (MouseSoundEnumerator);
+	}
+
+	private IEnumerator AsyncStartMouseEffect(){
+		float aTime = 0.475f;
+		for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / aTime)
+		{
+			yield return null;
+		}
+		AudioSource audio = this.GetComponents<AudioSource> ()[2];
+		if(startStar != null){
+			audio.mute = false;
+			audio.Play ();
+		}
+	}
+
+	public void StopMouseSound(){
+		AudioSource audio = this.GetComponents<AudioSource> ()[2];
+		audio.mute = true;
+		audio.Stop ();
+	//	StopCoroutine (MouseSoundEnumerator);
+	}
+		
 
 	public void OnStarDown(ConstelationStar star){
 		NBTouchStar = 0;
