@@ -15,7 +15,7 @@ public struct ConstelationNode  {
 }
 
 public class Constelation : MonoBehaviour {
-
+	public bool IsTuto = false;
 	public List<ConstelationNode> constelation;
 	// Use this for initialization
 	public GameObject LinkPrefab;
@@ -139,6 +139,8 @@ public class Constelation : MonoBehaviour {
 		StopMouseSound ();
 		destructConstelation ();
 		StartCoroutine(ClearLineIn( TimeAtOver));
+		if (IsTuto) {
+		}
 		GameObject.FindObjectOfType<Heros>().StartAction(constelationStrength,constelationType);
 	}
 
@@ -227,11 +229,12 @@ public class Constelation : MonoBehaviour {
 		
 
 	public void OnStarDown(ConstelationStar star){
-		NBTouchStar = 0;
-		PlayStarSound ();
+		
 		startStar = star;
 		startStar.state = StarStates.ACTIVATE;
 		NBActivateStar = 1;
+		NBTouchStar = 0;
+		PlayStarSound ();
 		UpdateActivateStar ();
 		// all new star iddle to SHOW
 		var newStarLinks = GetLinkForStar (star);
