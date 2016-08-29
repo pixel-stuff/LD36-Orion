@@ -189,9 +189,9 @@ public class Constelation : MonoBehaviour {
 
 	}
 
-
+	/*
 	public void StartMouseSound(){
-		AudioSource audio = this.GetComponents<AudioSource> ()[1];
+		AudioSource audio = this.GetComponents<AudioSource> ()[1];// play start sound
 		audio.Play ();
 		MouseSoundEnumerator = AsyncStartMouseEffect ();
 		StartCoroutine (MouseSoundEnumerator);
@@ -208,10 +208,18 @@ public class Constelation : MonoBehaviour {
 			audio.mute = false;
 			audio.Play ();
 		}
+	}*/
+
+	public void StartMouseSound(){
+		AudioSource audio = this.GetComponents<AudioSource> ()[1];
+		if(startStar != null){
+			audio.mute = false;
+			audio.Play ();
+		}
 	}
 
 	public void StopMouseSound(){
-		AudioSource audio = this.GetComponents<AudioSource> ()[2];
+		AudioSource audio = this.GetComponents<AudioSource> ()[1];
 		audio.mute = true;
 		audio.Stop ();
 	//	StopCoroutine (MouseSoundEnumerator);
