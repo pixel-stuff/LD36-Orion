@@ -16,8 +16,9 @@ public class ConstelationStar : MonoBehaviour {
 	public GameObject star;
 	private IEnumerator rotationEnumeration = null;
 	public ParticleSystem overParticule;
-	private float InitialScale = 1;
-	public float ShowStateScaleAddition = 0.5f;
+	private float InitialScale = 0;
+	public float starScale = 1;
+	public float ShowStateScaleAddition = 0.2f;
 	public float OverStateScaleAddition = 1f;
 	public Sprite ActivateSprite;
 	private Sprite IdleSprite;
@@ -27,7 +28,7 @@ public class ConstelationStar : MonoBehaviour {
 			switch (value) {
 			case StarStates.ACTIVATE:
 				star.GetComponent < UnityEngine.UI.Image> ().sprite = ActivateSprite;
-				star.transform.localScale = new Vector3 (InitialScale, InitialScale, 1);
+				star.transform.localScale = new Vector3 (starScale, starScale, 1);
 				if (rotationEnumeration != null) {
 					StopCoroutine (rotationEnumeration);
 				}
