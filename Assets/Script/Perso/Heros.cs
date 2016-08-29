@@ -16,7 +16,7 @@ public class Heros : Perso {
 	public AudioClip m_defenseSound;
 
 	public GameObject m_particleAttack;
-	public GameObject m_particleDefense;
+	public GameObject m_shieldDefense;
 	public GameObject m_particleHeal;
 
 	void Start(){
@@ -42,9 +42,9 @@ public class Heros : Perso {
 			this.GetComponent<AudioSource> ().clip = m_attackSound;
 			break;
 		case ConstelationType.DEFENCE:
-			m_particleDefense.GetComponent<ParticleSystem> ().Play ();
+			m_shieldDefense.SetActive(true);
 			this.GetComponent<AudioSource> ().clip = m_defenseSound;
-			this.m_coeffDef = 2;
+			this.m_coeffDef = 20;
 		break;
 		case ConstelationType.HEAL:
 			m_particleHeal.GetComponent<ParticleSystem> ().Play ();
@@ -103,9 +103,7 @@ public class Heros : Perso {
 			GameStateManager.setGameState (GameState.GameOver);
 		}
 		m_coeffDef = 1;
-		m_particleDefense.GetComponent<ParticleSystem> ().Stop ();
-		m_particleDefense.gameObject.SetActive (false);
-		m_particleDefense.gameObject.SetActive (true);
+		m_shieldDefense.gameObject.SetActive (false);
 	}
 
 	#endregion Coroutine
