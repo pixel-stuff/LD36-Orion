@@ -46,6 +46,7 @@ public class Constelation : MonoBehaviour {
 	void Update () {
 		if (startStar != null && !Input.GetMouseButton(0) && NBActivateStar != NBStar) {
 			destructConstelation ();
+			StarTools.Clear ();
 		}
 		if (startStar != null && Input.GetMouseButton (0) ) {
 			if (NBActivateStar != NBStar) {
@@ -92,7 +93,18 @@ public class Constelation : MonoBehaviour {
 			yield return null;
 		}
 		destructConstelation ();
+		StarTools.Clear ();
 	}
+
+	IEnumerator ClearLineIn( float aTime)
+	{
+		for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / aTime)
+		{
+			yield return null;
+		}
+		StarTools.Clear ();
+	}
+
 
 
 	void ConstelationFinish() {
@@ -104,17 +116,18 @@ public class Constelation : MonoBehaviour {
 			c.star.state = StarStates.OVER;
 		}
 		destructConstelation ();
-		//StartCoroutine(DestructIn( TimeAtOver));
+		StartCoroutine(ClearLineIn( TimeAtOver));
 		GameObject.FindObjectOfType<Heros>().StartAction(constelationStrength,constelationType);
 	}
 
 	void OnDestroy() {
 	
 		destructConstelation ();
+		StarTools.Clear ();
 	}
 
 	void destructConstelation (){
-		StarTools.Clear ();
+		
 		StarTools.DrawFromStarToMouse (false, Vector3.zero, Vector3.zero);
 		foreach (Link c in listLinks) {
 			c.Destruct ();
@@ -189,6 +202,7 @@ public class Constelation : MonoBehaviour {
 					}
 				} else {
 					destructConstelation ();
+					StarTools.Clear ();
 				}
 			}
 				
