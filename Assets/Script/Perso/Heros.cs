@@ -40,29 +40,27 @@ public class Heros : Perso {
 		case ConstelationType.ATTACK:
 			m_particleAttack.GetComponent<ParticleSystem> ().Play ();
 			this.GetComponent<AudioSource> ().clip = m_attackSound;
-			this.GetComponent<AudioSource> ().Play ();
-			StartCoroutine (CoroutAttack (value));
 			break;
 		case ConstelationType.DEFENCE:
 			m_particleDefense.GetComponent<ParticleSystem> ().Play ();
 			this.GetComponent<AudioSource> ().clip = m_defenseSound;
-			this.GetComponent<AudioSource> ().Play ();
 			this.m_coeffDef = 2;
 		break;
 		case ConstelationType.HEAL:
 			m_particleHeal.GetComponent<ParticleSystem> ().Play ();
 			this.GetComponent<AudioSource> ().clip = m_healSound;
-			this.GetComponent<AudioSource> ().Play ();
-			this.m_pv += value;
-			StartCoroutine (CoroutHeal ());
+			StartCoroutine (CoroutHeal (value));
 			break;
 		}
+		this.GetComponent<AudioSource> ().Play ();
+		StartCoroutine (CoroutAttack (value));
 	}
 	#endregion Controls
 
 	#region Coroutine
 
-	public IEnumerator CoroutHeal(){
+	public IEnumerator CoroutHeal(int value){
+		this.m_pv += value;
 		yield return new WaitForSeconds(0.3f);
 	}
 
