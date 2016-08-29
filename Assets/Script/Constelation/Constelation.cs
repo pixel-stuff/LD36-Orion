@@ -34,6 +34,10 @@ public class Constelation : MonoBehaviour {
 
 	public float TimeAtOver = 2f;
 
+
+	public List<AudioClip> starsSound;
+	private int NBTouchStar;
+
 	private IEnumerator FadeEnumeration = null;
 	void Start () {
 		foreach (ConstelationNode c in constelation) {
@@ -166,7 +170,15 @@ public class Constelation : MonoBehaviour {
 		return null;
 	}
 
+	public void PlayStarSound(){
+		AudioSource audio = this.GetComponent<AudioSource> ();
+		audio.PlayOneShot (starsSound [NBTouchStar % starsSound.Count]);
+		NBTouchStar++;
+	}
+
 	public void OnStarDown(ConstelationStar star){
+		NBTouchStar = 0;
+		PlayStarSound ();
 		startStar = star;
 		startStar.state = StarStates.ACTIVATE;
 		NBActivateStar = 1;
@@ -184,6 +196,7 @@ public class Constelation : MonoBehaviour {
 		
 		if(NBActivateStar != NBStar) {
 			if (startStar != null && star != startStar) {
+				PlayStarSound ();
 				var links = GetLinkForStar (startStar);
 				if (links != null && links.Contains (star)) {//if la star est dans les lien
 					StarTools.AddLine (startStar, star);
