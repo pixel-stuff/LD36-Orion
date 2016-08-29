@@ -91,6 +91,7 @@ GameObject:
   - 224: {fileID: 224000010861598160}
   - 222: {fileID: 222000010676285218}
   - 114: {fileID: 114000012034275622}
+  - 95: {fileID: 95000012164996998}
   m_Layer: 5
   m_Name: star
   m_TagString: Untagged
@@ -126,6 +127,23 @@ Transform:
   - {fileID: 4000011172569540}
   m_Father: {fileID: 224000013906155114}
   m_RootOrder: 0
+--- !u!95 &95000012164996998
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013798223104}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3c807fb8031974d8690edd92e5d630fc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114000010877801120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,7 +159,8 @@ MonoBehaviour:
   _state: 0
   star: {fileID: 1000013798223104}
   overParticule: {fileID: 198000010779901450}
-  ShowStateScaleAddition: 0.5
+  starScale: 0.3
+  ShowStateScaleAddition: 0.2
   OverStateScaleAddition: 0
   ActivateSprite: {fileID: 21300000, guid: f3b1dc2a6d3794ba6b025a8e982401ac, type: 3}
 --- !u!114 &114000012034275622
@@ -5631,7 +5650,7 @@ RectTransform:
   m_GameObject: {fileID: 1000013798223104}
   m_LocalRotation: {x: 0, y: 0, z: -0.8191525, w: 0.5735758}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 224000013906155114}
@@ -5667,7 +5686,7 @@ RectTransform:
   m_GameObject: {fileID: 1000012386109392}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.51, y: 0.51, z: 1}
+  m_LocalScale: {x: 0.50999993, y: 0.50999993, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000013261613120}
@@ -5676,6 +5695,6 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -227, y: 66}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -81.3, y: 44.4}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}

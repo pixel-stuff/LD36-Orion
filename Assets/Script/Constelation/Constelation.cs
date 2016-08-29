@@ -146,7 +146,7 @@ public class Constelation : MonoBehaviour {
 	}
 
 	void OnDestroy() {
-	
+		StopAllCoroutines ();
 		destructConstelation ();
 		StarTools.Clear ();
 		foreach (Link c in listLinks) {

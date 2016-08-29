@@ -15,6 +15,7 @@ public class ConstelationStar : MonoBehaviour {
 	public StarStates _state = StarStates.IDLE;
 	public GameObject star;
 	private IEnumerator rotationEnumeration = null;
+	private IEnumerator scaleEnumeration = null;
 	public ParticleSystem overParticule;
 	private float InitialScale = 0;
 	public float starScale = 1;
@@ -32,12 +33,17 @@ public class ConstelationStar : MonoBehaviour {
 				if (rotationEnumeration != null) {
 					StopCoroutine (rotationEnumeration);
 				}
+				if (scaleEnumeration != null) {
+					StopCoroutine (scaleEnumeration);
+				}
 				rotationEnumeration = Rotate (3.0f);
 				StartCoroutine (rotationEnumeration);
 				break;
 			case StarStates.IDLE:
 				star.GetComponent < UnityEngine.UI.Image> ().sprite = IdleSprite;
 				star.transform.localScale = new Vector3 (InitialScale, InitialScale, 1);
+				//scaleEnumeration = Pulse (0, 1.2f, 0.5f,Random.Range(10,100)/100f);
+				//StartCoroutine (scaleEnumeration);
 				if (rotationEnumeration != null) {
 					StopCoroutine (rotationEnumeration);
 				}
@@ -48,12 +54,19 @@ public class ConstelationStar : MonoBehaviour {
 				if (rotationEnumeration != null) {
 					StopCoroutine (rotationEnumeration);
 				}
+				if (scaleEnumeration != null) {
+					StopCoroutine (scaleEnumeration);
+				}
 				break;
 			case StarStates.OVER:
 				star.GetComponent < UnityEngine.UI.Image> ().sprite = IdleSprite;
 				//StartCoroutine (Pulse (InitialScale + OverStateScaleAddition, 0.3f, 0.8f));
+				star.transform.localScale = new Vector3 (InitialScale, InitialScale, 1);
 				if (rotationEnumeration != null) {
 					StopCoroutine (rotationEnumeration);
+				}
+				if (scaleEnumeration != null) {
+					StopCoroutine (scaleEnumeration);
 				}
 				overParticule.Emit (1);
 				break;
@@ -70,28 +83,33 @@ public class ConstelationStar : MonoBehaviour {
 		}
 	}
 
-	IEnumerator Pulse(float aValue, float aTime,float bTime)
+	IEnumerator Pulse(float aValue, float aTime,float bTime,float waitTime)
 	{
-		float scale = star.transform.localScale.x;
-		for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / aTime)
-		{
-			Vector3 newScale = new Vector3 (Mathf.Lerp (scale, aValue, t),Mathf.Lerp (scale, aValue, t),1);
-			star.transform.localScale = newScale;
-			yield return null;
+		while (true) {
+			for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / waitTime) {
+				yield return null;
+			}	
+			float scale = InitialScale;
+			for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / aTime) {
+				Vector3 newScale = new Vector3 (Mathf.Lerp (scale, aValue, t), Mathf.Lerp (scale, aValue, t), 1);
+				star.transform.localScale = newScale;
+				yield return null;
+			}
+
+			for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / bTime) {
+				Vector3 newScale = new Vector3 (Mathf.Lerp (aValue, scale, t), Mathf.Lerp (aValue, scale, t), 1);
+				star.transform.localScale = newScale;
+				yield return null;
+			}
 		}
 
-		for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / bTime)
-		{
-			Vector3 newScale = new Vector3 (Mathf.Lerp (aValue, scale, t),Mathf.Lerp (aValue, scale, t),1);
-			star.transform.localScale = newScale;
-			yield return null;
-		}
 	}
 
 	// Use this for initialization
 	void Start () {
 		InitialScale = star.transform.localScale.x;
 		IdleSprite = star.GetComponent < UnityEngine.UI.Image> ().sprite;
+		state = StarStates.IDLE;
 	}
 	
 	// Update is called once per frame
