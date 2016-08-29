@@ -25,6 +25,7 @@ public class UIMenuManager : MonoBehaviour {
 	float timeStartLoading;
 
 	public void GoToLevelScene(){
+        AudioManager.m_instance.PlayMenuButtonStartSound();
         StartCoroutine(DelayGoToLevelScene(2.0f));
     }
 

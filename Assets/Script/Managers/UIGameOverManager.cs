@@ -9,10 +9,15 @@ public class UIGameOverManager : MonoBehaviour {
 	}
 
 	public void ReturnToSceneMenu(){
+        // Playing sound for the button click event
+        AudioManager.m_instance.PlayMenuButtonSound();
         StartCoroutine(DelayGoToSceneMenu(1.5f));
 	}
 	
 	public void ReturnToLevelScene(){
+        // Playing sound for the button click event
+        AudioManager.m_instance.PlayMenuButtonSound();
+
         StartCoroutine(DelayGoToLevelScene(1.5f));
     }
 
