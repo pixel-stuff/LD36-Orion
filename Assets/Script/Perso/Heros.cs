@@ -38,18 +38,19 @@ public class Heros : Perso {
 	public void StartAction(int value, ConstelationType type){
 		switch (type) {
 		case ConstelationType.ATTACK:
+			m_particleAttack.GetComponent<ParticleSystem> ().Play ();
 			this.GetComponent<AudioSource> ().clip = m_attackSound;
 			this.GetComponent<AudioSource> ().Play ();
 			StartCoroutine (CoroutAttack (value));
 			break;
 		case ConstelationType.DEFENCE:
+			m_particleDefense.GetComponent<ParticleSystem> ().Play ();
 			this.GetComponent<AudioSource> ().clip = m_defenseSound;
 			this.GetComponent<AudioSource> ().Play ();
-			m_particleDefense.SetActive (true);
 			this.m_coeffDef = 2;
 		break;
 		case ConstelationType.HEAL:
-			m_particleHeal.SetActive (true);
+			m_particleHeal.GetComponent<ParticleSystem> ().Play ();
 			this.GetComponent<AudioSource> ().clip = m_healSound;
 			this.GetComponent<AudioSource> ().Play ();
 			this.m_pv += value;
@@ -63,18 +64,15 @@ public class Heros : Perso {
 
 	public IEnumerator CoroutHeal(){
 		yield return new WaitForSeconds(0.3f);
-		m_particleHeal.SetActive (false);
 	}
 
 	public IEnumerator CoroutAttack(int value){
-		m_particleAttack.GetComponent<ParticleSystem> ().Play ();
 		this.StartAttack ();
 		yield return new WaitForSeconds (0.3f);
 		FindObjectOfType<EnnemiManager> ().EnnemiBeingAttack(value);
 	}
 
 	public override IEnumerator CoroutBeingAttack(){
-
 		int iteration = 4;
 		float timeToWait = 0.10f;
 		do{
@@ -107,7 +105,6 @@ public class Heros : Perso {
 			GameStateManager.setGameState (GameState.GameOver);
 		}
 		m_coeffDef = 1;
-		m_particleDefense.SetActive (false);
 	}
 
 	#endregion Coroutine
