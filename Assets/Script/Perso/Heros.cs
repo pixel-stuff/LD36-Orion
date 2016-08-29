@@ -103,6 +103,9 @@ public class Heros : Perso {
 			GameStateManager.setGameState (GameState.GameOver);
 		}
 		m_coeffDef = 1;
+		m_particleDefense.GetComponent<ParticleSystem> ().Stop ();
+		m_particleDefense.gameObject.SetActive (false);
+		m_particleDefense.gameObject.SetActive (true);
 	}
 
 	#endregion Coroutine

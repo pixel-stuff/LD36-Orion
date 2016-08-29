@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public abstract class Perso : MonoBehaviour {
 
 	[Header("Perso")]
-	protected int m_pvMax = 100;
+	public int m_pvMax = 100;
 	public int m_pv = 0;
 	protected float m_currentPercentLife;
 	protected int m_coeffDef = 1;
