@@ -874,28 +874,6 @@ WindZone:
   m_WindTurbulence: 1
   m_WindPulseMagnitude: 20
   m_WindPulseFrequency: 0.01
---- !u!84 &1111698380
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 1334
-  m_Height: 750
-  m_AntiAliasing: 1
-  m_DepthFormat: 0
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 1
 --- !u!114 &1152518495 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000010877801120, guid: 7ef8bd13c7dca41daaeed8992e8f30d5,
@@ -1500,7 +1478,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 1111698380}
+  m_TargetTexture: {fileID: 1874590506}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -1521,6 +1499,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1227480257}
   m_RootOrder: 0
+--- !u!84 &1874590506
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 1036
+  m_Height: 583
+  m_AntiAliasing: 1
+  m_DepthFormat: 0
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 1
 --- !u!1001 &1881447200
 Prefab:
   m_ObjectHideFlags: 0

@@ -18,18 +18,15 @@ public class Link : MonoBehaviour {
 		Vector3 vector = targetStar.transform.position - sourceStar.transform.position;
 		float size = vector.magnitude;
 
-		UnityEditor.SerializedObject so = new UnityEditor.SerializedObject(activate);
+	
+		ParticleSystem.ShapeModule shapeModule = destruct.shape;
+		shapeModule.box = new Vector3 (size,shapeModule.box.y,shapeModule.box.z);
 
-		so.FindProperty("ShapeModule.boxX").floatValue = size;
-		so.ApplyModifiedProperties ();
-		so = new UnityEditor.SerializedObject(reussite);
+		shapeModule = reussite.shape;
+		shapeModule.box = new Vector3 (size,shapeModule.box.y,shapeModule.box.z);
 
-		so.FindProperty("ShapeModule.boxX").floatValue = size;
-		so.ApplyModifiedProperties ();
-		so = new UnityEditor.SerializedObject(destruct);
-
-		so.FindProperty("ShapeModule.boxX").floatValue = size;
-		so.ApplyModifiedProperties ();
+		shapeModule = activate.shape;
+		shapeModule.box = new Vector3 (size,shapeModule.box.y,shapeModule.box.z);
 
 		float alpha = Vector3.Angle (vector, new Vector3 (1, 0, 0));
 		alpha = (vector.y < 0) ? -alpha : alpha;
