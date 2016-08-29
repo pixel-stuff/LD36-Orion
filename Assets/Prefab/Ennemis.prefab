@@ -303,7 +303,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9e52bcea8f10f4356ae85c5ff26c5137, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e2af8985b75d0460abf7218a4272b60a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -351,8 +351,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_pv: 0
   m_ennemiState:
-  - {fileID: 21300000, guid: 9e52bcea8f10f4356ae85c5ff26c5137, type: 3}
-  - {fileID: 21300000, guid: 2cc8d6e8194064dbe8174a1497b623e5, type: 3}
+  - {fileID: 21300000, guid: e2af8985b75d0460abf7218a4272b60a, type: 3}
+  - {fileID: 21300000, guid: e2af8985b75d0460abf7218a4272b60a, type: 3}
   m_powerAttack: 11
   m_timeBetweenAttack: 6
   m_ennemiType: 2

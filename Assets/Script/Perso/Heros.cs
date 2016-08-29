@@ -15,8 +15,14 @@ public class Heros : Perso {
 	public AudioClip m_healSound;
 	public AudioClip m_defenseSound;
 
+	public GameObject m_particleAttack;
+	public GameObject m_particleDefense;
+	public GameObject m_particleHeal;
+
 	void Start(){
-		AudioManager.m_instance.PlayFightMusic ();
+		if (AudioManager.m_instance != null) {
+			AudioManager.m_instance.PlayFightMusic ();
+		}
 		this.GetComponent<Image> ().enabled = true;
 		this.GetComponent<AudioSource> ().clip = m_apparitionSound;
 		this.GetComponent<AudioSource> ().Play ();
@@ -39,19 +45,29 @@ public class Heros : Perso {
 		case ConstelationType.DEFENCE:
 			this.GetComponent<AudioSource> ().clip = m_defenseSound;
 			this.GetComponent<AudioSource> ().Play ();
+			m_particleDefense.SetActive (true);
 			this.m_coeffDef = 2;
 		break;
 		case ConstelationType.HEAL:
+			m_particleHeal.SetActive (true);
 			this.GetComponent<AudioSource> ().clip = m_healSound;
 			this.GetComponent<AudioSource> ().Play ();
 			this.m_pv += value;
+			StartCoroutine (CoroutHeal ());
 			break;
 		}
 	}
 	#endregion Controls
 
 	#region Coroutine
+
+	public IEnumerator CoroutHeal(){
+		yield return new WaitForSeconds(0.3f);
+		m_particleHeal.SetActive (false);
+	}
+
 	public IEnumerator CoroutAttack(int value){
+		m_particleAttack.GetComponent<ParticleSystem> ().Play ();
 		this.StartAttack ();
 		yield return new WaitForSeconds (0.3f);
 		FindObjectOfType<EnnemiManager> ().EnnemiBeingAttack(value);
@@ -91,6 +107,7 @@ public class Heros : Perso {
 			GameStateManager.setGameState (GameState.GameOver);
 		}
 		m_coeffDef = 1;
+		m_particleDefense.SetActive (false);
 	}
 
 	#endregion Coroutine
