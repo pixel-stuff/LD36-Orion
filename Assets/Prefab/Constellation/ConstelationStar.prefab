@@ -773,12 +773,12 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0.45945954
+          value: 0.09459472
           inSlope: 0
           outSlope: 0
           tangentMode: 0
         - time: 0.410195
-          value: 0.9594595
+          value: 0.37837845
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -5695,6 +5695,6 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -81.3, y: 44.4}
+  m_AnchoredPosition: {x: 12.5, y: 76.4}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
