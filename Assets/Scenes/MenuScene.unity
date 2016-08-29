@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692534, g: 0.49678725, b: 0.57508564, a: 1}
+  m_IndirectSpecularColor: {r: 0.44692534, g: 0.49678725, b: 0.5750856, a: 1}
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -167,6 +167,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1526107866}
         m_MethodName: GoToLevelScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 683952204}
+        m_MethodName: PlayMenuButtonStartSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -442,6 +453,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_menuAudioClip: {fileID: 8300000, guid: 1a4e9c7cdc8af41998adb73c244f316f, type: 3}
   m_fightAudioClip: {fileID: 8300000, guid: 1fe65eac86dce49c4a7f42a3ce49291a, type: 3}
+  m_menuButtonClip: {fileID: 8300000, guid: 22314ef92a8405c4da558bcbd037b04e, type: 3}
+  m_menuButtonStartClip: {fileID: 8300000, guid: e291c4f2663f4b842a125fd9ccf4d147,
+    type: 3}
 --- !u!4 &683952205
 Transform:
   m_ObjectHideFlags: 0
@@ -522,7 +536,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Constelation fucker
+  m_Text: Constellation fucker
 --- !u!222 &861348486
 CanvasRenderer:
   m_ObjectHideFlags: 0

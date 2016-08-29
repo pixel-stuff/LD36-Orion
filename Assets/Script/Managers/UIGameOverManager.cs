@@ -9,13 +9,24 @@ public class UIGameOverManager : MonoBehaviour {
 	}
 
 	public void ReturnToSceneMenu(){
-		GameStateManager.setGameState (GameState.Menu);
-		Application.LoadLevelAsync ("MenuScene");
+        StartCoroutine(DelayGoToSceneMenu(1.5f));
 	}
 	
 	public void ReturnToLevelScene(){
-		GameStateManager.setGameState (GameState.Playing);
-		Application.LoadLevelAsync ("SceneMathias");
-		
-	}
+        StartCoroutine(DelayGoToLevelScene(1.5f));
+    }
+
+    IEnumerator DelayGoToSceneMenu(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        GameStateManager.setGameState(GameState.Menu);
+        Application.LoadLevelAsync("MenuScene");
+    }
+
+    IEnumerator DelayGoToLevelScene(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        GameStateManager.setGameState(GameState.Playing);
+        Application.LoadLevelAsync("SceneMathias");
+    }
 }

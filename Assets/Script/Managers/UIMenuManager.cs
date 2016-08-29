@@ -25,9 +25,15 @@ public class UIMenuManager : MonoBehaviour {
 	float timeStartLoading;
 
 	public void GoToLevelScene(){
-		GameStateManager.setGameState (GameState.Playing);
-		a =  Application.LoadLevelAsync ("SceneMathias");
-		//a.allowSceneActivation = false;
-		timeStartLoading = Time.time;
-	}
+        StartCoroutine(DelayGoToLevelScene(2.0f));
+    }
+
+    IEnumerator DelayGoToLevelScene(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        GameStateManager.setGameState(GameState.Playing);
+        a = Application.LoadLevelAsync("SceneMathias");
+        //a.allowSceneActivation = false;
+        timeStartLoading = Time.time;
+    }
 }

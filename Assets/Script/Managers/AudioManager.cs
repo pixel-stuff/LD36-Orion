@@ -23,6 +23,10 @@ public class AudioManager : MonoBehaviour {
 	private AudioClip m_menuAudioClip;
 	[SerializeField]
 	private AudioClip m_fightAudioClip;
+    [SerializeField]
+    private AudioClip m_menuButtonClip;
+    [SerializeField]
+    private AudioClip m_menuButtonStartClip;
 
 	private static Transform m_transform;
 
@@ -75,9 +79,30 @@ public class AudioManager : MonoBehaviour {
 
 	}
 
-	
-	// Update is called once per frame
-	void Update () {
+    public void PlayMenuButtonStartSound(){
+        GameObject go = new GameObject ("Audio_" + m_menuButtonStartClip.name);
+        go.transform.parent = null;
+
+        AudioSource source = go.AddComponent<AudioSource>();
+        source.clip = m_menuButtonStartClip;
+
+        source.Play();
+    }
+
+    public void PlayMenuButtonSound()
+    {
+        GameObject go = new GameObject("Audio_" + m_menuButtonClip.name);
+        go.transform.parent = null;
+
+        AudioSource source = go.AddComponent<AudioSource>();
+        source.clip = m_menuButtonClip;
+
+        source.Play();
+    }
+
+
+    // Update is called once per frame
+    void Update () {
 	
 	}
 }
