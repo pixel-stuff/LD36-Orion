@@ -34,8 +34,9 @@ public class Constelation : MonoBehaviour {
 
 	public float TimeAtOver = 2f;
 
-
+	public AudioClip CastFailSound;
 	public List<AudioClip> starsSound;
+
 	private int NBTouchStar;
 	private IEnumerator MouseSoundEnumerator;
 
@@ -56,6 +57,7 @@ public class Constelation : MonoBehaviour {
 				c.Destruct ();
 			}
 			StopMouseSound ();
+			PlayCastFail ();
 			listLinks.Clear ();
 
 		}
@@ -181,6 +183,13 @@ public class Constelation : MonoBehaviour {
 		StartMouseSound ();
 	}
 
+	public void PlayCastFail(){
+		AudioSource audio = this.GetComponents<AudioSource> ()[0];
+		audio.PlayOneShot (CastFailSound);
+
+	}
+
+
 	public void StartMouseSound(){
 		AudioSource audio = this.GetComponents<AudioSource> ()[1];
 		audio.Play ();
@@ -265,6 +274,7 @@ public class Constelation : MonoBehaviour {
 					}
 				} else {
 					destructConstelation ();
+					PlayCastFail ();
 					StarTools.Clear ();
 					foreach (Link c in listLinks) {
 						c.Destruct ();
