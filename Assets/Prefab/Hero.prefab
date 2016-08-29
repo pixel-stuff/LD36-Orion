@@ -62,9 +62,9 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 80.45}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 48.73
 --- !u!82 &82000010930017706
 AudioSource:
   m_ObjectHideFlags: 1
@@ -170,8 +170,8 @@ MonoBehaviour:
   m_pv: 0
   m_bracelet: {fileID: 0}
   m_braceletState:
-  - {fileID: 21300000, guid: f87436978d41846258ed7b3a02a1435a, type: 3}
-  - {fileID: 21300000, guid: 6d78a4386a93143119562cd4b1f786aa, type: 3}
+  - {fileID: 21300000, guid: 2c2e63a8621a142d2ace71dba99f696b, type: 3}
+  - {fileID: 21300000, guid: 2c2e63a8621a142d2ace71dba99f696b, type: 3}
   m_apparitionSound: {fileID: 8300000, guid: 97df4e99ceecd448480ed707925de3f9, type: 3}
   m_attackSound: {fileID: 8300000, guid: 15b274ae88c1a4275a29db188602f5ba, type: 3}
   m_healSound: {fileID: 8300000, guid: 599277c38d35a499685feb858ddba66f, type: 3}
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014142652306}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
@@ -237,5 +237,5 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -330.3297}
-  m_SizeDelta: {x: 91.46254, y: 158.6595}
+  m_SizeDelta: {x: 91, y: 158}
   m_Pivot: {x: 0.5, y: 0}
