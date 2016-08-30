@@ -9,31 +9,31 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1000012478804466}
+  m_RootGameObject: {fileID: 1000012798218890}
   m_IsPrefabParent: 1
---- !u!1 &1000012478804466
+--- !u!1 &1000012798218890
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 224: {fileID: 224000012618406090}
-  - 198: {fileID: 198000013757294016}
-  - 199: {fileID: 199000013616799980}
+  - 224: {fileID: 224000011535468956}
+  - 198: {fileID: 198000010765579238}
+  - 199: {fileID: 199000012558989770}
   m_Layer: 5
-  m_Name: Monster Death
+  m_Name: bracelet-hit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!198 &198000013757294016
+--- !u!198 &198000010765579238
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012478804466}
+  m_GameObject: {fileID: 1000012798218890}
   serializedVersion: 2
   lengthInSec: 1
   startDelay:
@@ -420,8 +420,8 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 2
     enabled: 1
-    type: 10
-    radius: 2
+    type: 11
+    radius: 0.29
     angle: 3.82
     length: 5
     boxX: 1.65
@@ -436,7 +436,7 @@ ParticleSystem:
     m_MeshNormalOffset: 0
     m_UseMeshMaterialIndex: 0
     m_UseMeshColors: 1
-    randomDirection: 1
+    randomDirection: 0
   EmissionModule:
     enabled: 1
     serializedVersion: 2
@@ -1696,12 +1696,12 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
---- !u!199 &199000013616799980
+--- !u!199 &199000012558989770
 ParticleSystemRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012478804466}
+  m_GameObject: {fileID: 1000012798218890}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -1740,21 +1740,21 @@ ParticleSystemRenderer:
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
---- !u!224 &224000012618406090
+--- !u!224 &224000011535468956
 RectTransform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012478804466}
+  m_GameObject: {fileID: 1000012798218890}
   m_LocalRotation: {x: -0, y: 0.99999076, z: -0.0043044165, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 0.99999994, y: 0.9999997, z: 1.0000007}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9999999, y: 0.99999946, z: 1.0000013}
   m_LocalEulerAnglesHint: {x: 0.48800004, y: 180.00002, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: 107}
+  m_AnchoredPosition: {x: -658, y: -41.999996}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
