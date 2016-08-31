@@ -796,7 +796,7 @@ Prefab:
     - target: {fileID: 224000011636191598, guid: 639dcfade71ee4946a8666dbb252e2e0,
         type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224000011636191598, guid: 639dcfade71ee4946a8666dbb252e2e0,
         type: 2}
@@ -2202,7 +2202,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 77c3c8d45c4e64c7e8f6966bc58d2ed9, type: 2}
   m_IsPrefabParent: 0
---- !u!84 &687589808
+--- !u!84 &637655809
 RenderTexture:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -3934,7 +3934,7 @@ Prefab:
     - target: {fileID: 224000013112109026, guid: 309e10e129adc4300b4db2b788da7f72,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 224000013112109026, guid: 309e10e129adc4300b4db2b788da7f72,
         type: 2}
@@ -4797,10 +4797,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 1950243188}
+  m_Children: []
   m_Father: {fileID: 1425974114}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -5, y: -287}
@@ -6427,6 +6426,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 111940966}
+  - {fileID: 1950243188}
   - {fileID: 1102896732}
   - {fileID: 694882977}
   - {fileID: 906953774}
@@ -7253,7 +7253,7 @@ Prefab:
     - target: {fileID: 224000012081320122, guid: 43e9b64ee5b244a169ad37a08d7a83e9,
         type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 224000012081320122, guid: 43e9b64ee5b244a169ad37a08d7a83e9,
         type: 2}
@@ -7443,7 +7443,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 687589808}
+  m_TargetTexture: {fileID: 637655809}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -7765,7 +7765,7 @@ Prefab:
     - target: {fileID: 224000010901035230, guid: ff29ceb85ea914b3c9fa8f3e76e19f4d,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 224000010901035230, guid: ff29ceb85ea914b3c9fa8f3e76e19f4d,
         type: 2}
@@ -8300,11 +8300,11 @@ RectTransform:
   - {fileID: 894017729}
   - {fileID: 1910264638}
   - {fileID: 1336562144}
-  m_Father: {fileID: 1102896732}
-  m_RootOrder: 0
+  m_Father: {fileID: 1425974114}
+  m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 101.6564, y: -357.50885}
+  m_AnchoredPosition: {x: 96.656395, y: -553}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1997729742
