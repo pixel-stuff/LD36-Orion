@@ -28,12 +28,7 @@ public class Heros : Perso {
 		this.GetComponent<AudioSource> ().Play ();
 
 	}
-
-	void Update(){
-		if (Input.GetKeyDown(KeyCode.Space)) {
-			this.StartAction (12,ConstelationType.ATTACK);
-		}
-	}
+		
 	#region Controls
 	public void StartAction(int value, ConstelationType type){
 		switch (type) {
