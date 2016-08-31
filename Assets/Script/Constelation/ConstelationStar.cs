@@ -42,8 +42,8 @@ public class ConstelationStar : MonoBehaviour {
 			case StarStates.IDLE:
 				star.GetComponent < UnityEngine.UI.Image> ().sprite = IdleSprite;
 				star.transform.localScale = new Vector3 (InitialScale, InitialScale, 1);
-				//scaleEnumeration = Pulse (0, 1.2f, 0.5f,Random.Range(10,100)/100f);
-				//StartCoroutine (scaleEnumeration);
+				scaleEnumeration = Pulse (0.01f, 1.2f, 0.5f,Random.Range(10,100)/100f);
+				StartCoroutine (scaleEnumeration);
 				if (rotationEnumeration != null) {
 					StopCoroutine (rotationEnumeration);
 				}
