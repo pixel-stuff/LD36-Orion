@@ -768,7 +768,7 @@ ParticleSystem:
   SizeModule:
     enabled: 1
     curve:
-      scalar: 0.4
+      scalar: 0.7
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -864,7 +864,7 @@ ParticleSystem:
       minMaxState: 1
     separateAxes: 0
   RotationModule:
-    enabled: 1
+    enabled: 0
     x:
       scalar: 0
       maxCurve:
