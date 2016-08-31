@@ -2497,7 +2497,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     type: 10
-    radius: 1
+    radius: 0.42
     angle: 25
     length: 5
     boxX: 1
@@ -3861,7 +3861,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     startLifetime:
-      scalar: 2
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3877,7 +3877,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0.2
+          value: 0.4
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -3886,7 +3886,7 @@ ParticleSystem:
         m_RotationOrder: 0
       minMaxState: 3
     startSpeed:
-      scalar: 2
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3902,7 +3902,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0.25
+          value: 0.5
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -4482,19 +4482,19 @@ ParticleSystem:
           rgba: 4294953267
         key2:
           serializedVersion: 2
-          rgba: 16720025
+          rgba: 16734496
         key3:
           serializedVersion: 2
-          rgba: 5113396
+          rgba: 4283303438
         key4:
           serializedVersion: 2
           rgba: 16777215
         key5:
           serializedVersion: 2
-          rgba: 0
+          rgba: 4278190080
         key6:
           serializedVersion: 2
-          rgba: 0
+          rgba: 4278190080
         key7:
           serializedVersion: 2
           rgba: 0
@@ -4507,15 +4507,15 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 58018
-        atime2: 65535
-        atime3: 0
-        atime4: 0
-        atime5: 0
-        atime6: 0
-        atime7: 0
+        atime1: 16384
+        atime2: 19661
+        atime3: 22359
+        atime4: 25636
+        atime5: 28913
+        atime6: 58018
+        atime7: 65535
         m_NumColorKeys: 4
-        m_NumAlphaKeys: 3
+        m_NumAlphaKeys: 8
       minGradient:
         key0:
           serializedVersion: 2
