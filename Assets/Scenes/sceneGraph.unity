@@ -17043,11 +17043,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
       minMaxState: 0
-    cnt0: 30
+    cnt0: 80
     cnt1: 30
     cnt2: 30
     cnt3: 30
-    cntmax0: 60
+    cntmax0: 80
     cntmax1: 30
     cntmax2: 30
     cntmax3: 30
@@ -23540,7 +23540,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1909407371}
   m_LocalRotation: {x: -0.9999852, y: -0, z: -0, w: -0.0054468606}
-  m_LocalPosition: {x: -5.57, y: -1.8, z: 0.08}
+  m_LocalPosition: {x: -7.11, y: 0.67, z: 0.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: -180.617, y: 0, z: 0}
   m_Children:
