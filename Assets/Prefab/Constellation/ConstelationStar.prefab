@@ -768,19 +768,19 @@ ParticleSystem:
   SizeModule:
     enabled: 1
     curve:
-      scalar: 0.7
+      scalar: 0.3
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0.33333334
+          value: 0.56666666
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - time: 0.90116274
-          value: 1
-          inSlope: 2.6060617
-          outSlope: 2.6060617
+        - time: 1
+          value: 0.98333335
+          inSlope: 1.8242428
+          outSlope: 1.8242428
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -5560,7 +5560,7 @@ RectTransform:
   m_GameObject: {fileID: 1000013798223104}
   m_LocalRotation: {x: 0, y: 0, z: -0.8191525, w: 0.5735758}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 1}
+  m_LocalScale: {x: 0.17, y: 0.17, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 224000013906155114}
@@ -5605,6 +5605,6 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -83.8, y: 16.5}
+  m_AnchoredPosition: {x: -109, y: 26}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
