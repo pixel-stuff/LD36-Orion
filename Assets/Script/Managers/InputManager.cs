@@ -42,10 +42,6 @@ public class InputManager : MonoBehaviour {
 	}
 
 	void UpdateMenuState(){
-		if(Input.GetKeyDown(KeyCode.Return)){
-			GameStateManager.setGameState (GameState.Playing);
-			Application.LoadLevelAsync ("SceneMathias");
-		}
 	}
 
 	void UpdatePlayingState(){
