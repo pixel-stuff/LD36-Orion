@@ -22,6 +22,9 @@ public class ConstelationStar : MonoBehaviour {
 	public float starScale = 1;
 	public float ShowStateScaleAddition = 0.2f;
 	public float OverStateScaleAddition = 1f;
+	public float minBlink = 0.1f;
+	public float durationBlinkDown = 1.2f;
+	public float durationBlinkUp = 0.5f;
 	public StarStates state { 
 		get{return _state;}
 		set{ 
@@ -44,7 +47,7 @@ public class ConstelationStar : MonoBehaviour {
 				starStar.SetActive (false);
 				roundStar.transform.localScale = new Vector3 (InitialScale, InitialScale, 1);
 				if (scaleEnumeration == null) {
-					scaleEnumeration = Pulse (0.01f, 1.2f, 0.5f, Random.Range (10, 100) / 100f);
+					scaleEnumeration = Pulse (minBlink, durationBlinkDown, durationBlinkUp, Random.Range (10, 100) / 100f);
 					StartCoroutine (scaleEnumeration);
 				}
 				if (rotationEnumeration != null) {
