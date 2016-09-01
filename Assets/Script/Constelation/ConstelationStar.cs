@@ -13,7 +13,8 @@ public class ConstelationStar : MonoBehaviour {
 	public Constelation starConstelation;
 
 	public StarStates _state = StarStates.IDLE;
-	public GameObject star;
+	public GameObject roundStar;
+	public GameObject starStar;
 	private IEnumerator rotationEnumeration = null;
 	private IEnumerator scaleEnumeration = null;
 	public ParticleSystem overParticule;
@@ -21,53 +22,55 @@ public class ConstelationStar : MonoBehaviour {
 	public float starScale = 1;
 	public float ShowStateScaleAddition = 0.2f;
 	public float OverStateScaleAddition = 1f;
-	public Sprite ActivateSprite;
-	private Sprite IdleSprite;
 	public StarStates state { 
 		get{return _state;}
 		set{ 
 			switch (value) {
 			case StarStates.ACTIVATE:
-				star.GetComponent < UnityEngine.UI.Image> ().sprite = ActivateSprite;
-				star.transform.localScale = new Vector3 (starScale, starScale, 1);
+				//star.GetComponent < UnityEngine.UI.Image> ().sprite = ActivateSprite;
+				roundStar.SetActive (false);
+				starStar.SetActive (true);
+				starStar.transform.localScale = new Vector3 (starScale, starScale, 1);
 				if (rotationEnumeration != null) {
 					StopCoroutine (rotationEnumeration);
 				}
-				if (scaleEnumeration != null) {
-					StopCoroutine (scaleEnumeration);
-				}
+			
 				rotationEnumeration = Rotate (3.0f);
 				StartCoroutine (rotationEnumeration);
 				break;
 			case StarStates.IDLE:
-				star.GetComponent < UnityEngine.UI.Image> ().sprite = IdleSprite;
-				star.transform.localScale = new Vector3 (InitialScale, InitialScale, 1);
-				scaleEnumeration = Pulse (0.01f, 1.2f, 0.5f,Random.Range(10,100)/100f);
-				StartCoroutine (scaleEnumeration);
+				//star.GetComponent < UnityEngine.UI.Image> ().sprite = IdleSprite;
+				roundStar.SetActive (true);
+				starStar.SetActive (false);
+				roundStar.transform.localScale = new Vector3 (InitialScale, InitialScale, 1);
+				if (scaleEnumeration == null) {
+					scaleEnumeration = Pulse (0.01f, 1.2f, 0.5f, Random.Range (10, 100) / 100f);
+					StartCoroutine (scaleEnumeration);
+				}
 				if (rotationEnumeration != null) {
 					StopCoroutine (rotationEnumeration);
 				}
 				break;
 			case StarStates.SHOW:
-				star.GetComponent < UnityEngine.UI.Image> ().sprite = IdleSprite;
-				star.transform.localScale = new Vector3 (InitialScale + ShowStateScaleAddition, InitialScale + ShowStateScaleAddition, 1);
+				roundStar.SetActive (true);
+				starStar.SetActive (false);
+				//star.GetComponent < UnityEngine.UI.Image> ().sprite = IdleSprite;
+				roundStar.transform.localScale = new Vector3 (InitialScale + ShowStateScaleAddition, InitialScale + ShowStateScaleAddition, 1);
 				if (rotationEnumeration != null) {
 					StopCoroutine (rotationEnumeration);
 				}
-				if (scaleEnumeration != null) {
-					StopCoroutine (scaleEnumeration);
-				}
+
 				break;
 			case StarStates.OVER:
-				star.GetComponent < UnityEngine.UI.Image> ().sprite = IdleSprite;
+				roundStar.SetActive (true);
+				starStar.SetActive (false);
+				//star.GetComponent < UnityEngine.UI.Image> ().sprite = IdleSprite;
 				//StartCoroutine (Pulse (InitialScale + OverStateScaleAddition, 0.3f, 0.8f));
-				star.transform.localScale = new Vector3 (InitialScale, InitialScale, 1);
+				roundStar.transform.localScale = new Vector3 (InitialScale, InitialScale, 1);
 				if (rotationEnumeration != null) {
 					StopCoroutine (rotationEnumeration);
 				}
-				if (scaleEnumeration != null) {
-					StopCoroutine (scaleEnumeration);
-				}
+
 				overParticule.Emit (1);
 				break;
 			}
@@ -78,7 +81,7 @@ public class ConstelationStar : MonoBehaviour {
 		while(true)
 		{
 			Vector3 newRotation = new Vector3 (0,0,aValue);
-			star.transform.Rotate( newRotation);
+			starStar.transform.Rotate( newRotation);
 			yield return null;
 		}
 	}
@@ -92,13 +95,13 @@ public class ConstelationStar : MonoBehaviour {
 			float scale = InitialScale;
 			for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / aTime) {
 				Vector3 newScale = new Vector3 (Mathf.Lerp (scale, aValue, t), Mathf.Lerp (scale, aValue, t), 1);
-				star.transform.localScale = newScale;
+				roundStar.transform.localScale = newScale;
 				yield return null;
 			}
 
 			for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / bTime) {
 				Vector3 newScale = new Vector3 (Mathf.Lerp (aValue, scale, t), Mathf.Lerp (aValue, scale, t), 1);
-				star.transform.localScale = newScale;
+				roundStar.transform.localScale = newScale;
 				yield return null;
 			}
 		}
@@ -107,8 +110,8 @@ public class ConstelationStar : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		InitialScale = star.transform.localScale.x;
-		IdleSprite = star.GetComponent < UnityEngine.UI.Image> ().sprite;
+		InitialScale = roundStar.transform.localScale.x;
+		//IdleSprite = star.GetComponent < UnityEngine.UI.Image> ().sprite;
 		state = StarStates.IDLE;
 	}
 	
