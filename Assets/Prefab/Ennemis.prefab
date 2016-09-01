@@ -270,9 +270,9 @@ MonoBehaviour:
   m_powerAttack: 10
   m_timeBetweenAttack: 6
   m_ennemiType: 1
-  m_apparitionSound: {fileID: 8300000, guid: 4e53697c2ba494b6fbeecf09a4dd4d7e, type: 3}
-  m_attackSound: {fileID: 8300000, guid: ddd8c7370e8c64267bfe9b5407de9801, type: 3}
-  m_deathSound: {fileID: 8300000, guid: 1b5ab75da9d52442589b143f17294757, type: 3}
+  m_apparitionSound: {fileID: 8300000, guid: 56febdaebc6d947308b96c1f04b55f28, type: 3}
+  m_attackSound: {fileID: 8300000, guid: ec2cadbbc65ec4d6cba4bb1aee9c77fb, type: 3}
+  m_deathSound: {fileID: 8300000, guid: b8c103d705b174970977ee11318ed33b, type: 3}
 --- !u!114 &114000010744337710
 MonoBehaviour:
   m_ObjectHideFlags: 1

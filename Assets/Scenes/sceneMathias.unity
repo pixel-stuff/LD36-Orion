@@ -3659,6 +3659,11 @@ Prefab:
       propertyPath: m_bracelet
       value: 
       objectReference: {fileID: 2123170778}
+    - target: {fileID: 198000011827243538, guid: 309e10e129adc4300b4db2b788da7f72,
+        type: 2}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 309e10e129adc4300b4db2b788da7f72, type: 2}
   m_IsPrefabParent: 0
@@ -5505,12 +5510,12 @@ Prefab:
     - target: {fileID: 224000013906155114, guid: 7ef8bd13c7dca41daaeed8992e8f30d5,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -83.8
+      value: -64
       objectReference: {fileID: 0}
     - target: {fileID: 224000013906155114, guid: 7ef8bd13c7dca41daaeed8992e8f30d5,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 16.5
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 224000013906155114, guid: 7ef8bd13c7dca41daaeed8992e8f30d5,
         type: 2}
@@ -5630,7 +5635,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 859b3493796484bdcb43177d41336439, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2a3b771a403c34b67a4f7a0a1538f392, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6120,6 +6125,28 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1447191813}
   m_Script: {fileID: 11500000, guid: d7176de5a49b94f5bb3d6f444f175ade, type: 3}
+--- !u!84 &1454001729
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 1334
+  m_Height: 750
+  m_AntiAliasing: 1
+  m_DepthFormat: 0
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 1
 --- !u!1001 &1487096541
 Prefab:
   m_ObjectHideFlags: 0
@@ -6491,28 +6518,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1541533951}
   m_Script: {fileID: 11500000, guid: d7176de5a49b94f5bb3d6f444f175ade, type: 3}
---- !u!84 &1558851923
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 1179
-  m_Height: 663
-  m_AntiAliasing: 1
-  m_DepthFormat: 0
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 1
 --- !u!1001 &1607369914
 Prefab:
   m_ObjectHideFlags: 0
@@ -6982,7 +6987,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 1558851923}
+  m_TargetTexture: {fileID: 1454001729}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
