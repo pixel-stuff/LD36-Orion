@@ -14,6 +14,7 @@ public class ConstelationStar : MonoBehaviour {
 
 	public StarStates _state = StarStates.IDLE;
 	public GameObject roundStar;
+	public GameObject roundStarShow;
 	public GameObject starStar;
 	private IEnumerator rotationEnumeration = null;
 	private IEnumerator scaleEnumeration = null;
@@ -32,6 +33,7 @@ public class ConstelationStar : MonoBehaviour {
 			case StarStates.ACTIVATE:
 				//star.GetComponent < UnityEngine.UI.Image> ().sprite = ActivateSprite;
 				roundStar.SetActive (false);
+				roundStarShow.SetActive (false);
 				starStar.SetActive (true);
 				starStar.transform.localScale = new Vector3 (starScale, starScale, 1);
 				if (rotationEnumeration != null) {
@@ -44,6 +46,7 @@ public class ConstelationStar : MonoBehaviour {
 			case StarStates.IDLE:
 				//star.GetComponent < UnityEngine.UI.Image> ().sprite = IdleSprite;
 				roundStar.SetActive (true);
+				roundStarShow.SetActive (false);
 				starStar.SetActive (false);
 				roundStar.transform.localScale = new Vector3 (InitialScale, InitialScale, 1);
 				if (scaleEnumeration == null) {
@@ -55,10 +58,11 @@ public class ConstelationStar : MonoBehaviour {
 				}
 				break;
 			case StarStates.SHOW:
-				roundStar.SetActive (true);
+				roundStarShow.SetActive (true);
+				roundStar.SetActive (false);
 				starStar.SetActive (false);
 				//star.GetComponent < UnityEngine.UI.Image> ().sprite = IdleSprite;
-				roundStar.transform.localScale = new Vector3 (InitialScale + ShowStateScaleAddition, InitialScale + ShowStateScaleAddition, 1);
+				roundStarShow.transform.localScale = new Vector3 (InitialScale + ShowStateScaleAddition, InitialScale + ShowStateScaleAddition, 1);
 				if (rotationEnumeration != null) {
 					StopCoroutine (rotationEnumeration);
 				}
@@ -66,6 +70,7 @@ public class ConstelationStar : MonoBehaviour {
 				break;
 			case StarStates.OVER:
 				roundStar.SetActive (true);
+				roundStarShow.SetActive (false);
 				starStar.SetActive (false);
 				//star.GetComponent < UnityEngine.UI.Image> ().sprite = IdleSprite;
 				//StartCoroutine (Pulse (InitialScale + OverStateScaleAddition, 0.3f, 0.8f));
