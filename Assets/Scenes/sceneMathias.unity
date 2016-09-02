@@ -2101,6 +2101,28 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224000011636191598, guid: 639dcfade71ee4946a8666dbb252e2e0,
     type: 2}
   m_PrefabInternal: {fileID: 238949289}
+--- !u!84 &748375788
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 1179
+  m_Height: 663
+  m_AntiAliasing: 1
+  m_DepthFormat: 0
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 1
 --- !u!114 &751687340 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000010877801120, guid: 7ef8bd13c7dca41daaeed8992e8f30d5,
@@ -3659,6 +3681,11 @@ Prefab:
       propertyPath: m_bracelet
       value: 
       objectReference: {fileID: 2123170778}
+    - target: {fileID: 58000013811144642, guid: 309e10e129adc4300b4db2b788da7f72,
+        type: 2}
+      propertyPath: m_Radius
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 309e10e129adc4300b4db2b788da7f72, type: 2}
   m_IsPrefabParent: 0
@@ -6960,7 +6987,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 2006669378}
+  m_TargetTexture: {fileID: 748375788}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -7693,28 +7720,6 @@ RectTransform:
   m_AnchoredPosition: {x: 96.656395, y: -553}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!84 &2006669378
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 1179
-  m_Height: 663
-  m_AntiAliasing: 1
-  m_DepthFormat: 0
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 1
 --- !u!1001 &2026085122
 Prefab:
   m_ObjectHideFlags: 0
