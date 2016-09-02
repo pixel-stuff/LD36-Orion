@@ -21,6 +21,7 @@ public class InputManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Application.targetFrameRate = 60;
 	}
 
 	// Update is called once per frame
@@ -42,10 +43,6 @@ public class InputManager : MonoBehaviour {
 	}
 
 	void UpdateMenuState(){
-		if(Input.GetKeyDown(KeyCode.Return)){
-			GameStateManager.setGameState (GameState.Playing);
-			Application.LoadLevelAsync ("LevelScene");
-		}
 	}
 
 	void UpdatePlayingState(){

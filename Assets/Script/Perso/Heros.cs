@@ -39,7 +39,7 @@ public class Heros : Perso {
 		case ConstelationType.DEFENCE:
 			m_shieldDefense.SetActive(true);
 			this.GetComponent<AudioSource> ().clip = m_defenseSound;
-			this.m_coeffDef = 20;
+			this.m_coeffDef = 100;
 		break;
 		case ConstelationType.HEAL:
 			m_particleHeal.GetComponent<ParticleSystem> ().Play ();
