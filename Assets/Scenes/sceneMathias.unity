@@ -3659,6 +3659,31 @@ Prefab:
       propertyPath: m_bracelet
       value: 
       objectReference: {fileID: 2123170778}
+    - target: {fileID: 224000011211969344, guid: 309e10e129adc4300b4db2b788da7f72,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 198000011312820700, guid: 309e10e129adc4300b4db2b788da7f72,
+        type: 2}
+      propertyPath: lengthInSec
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 198000013758058928, guid: 309e10e129adc4300b4db2b788da7f72,
+        type: 2}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198000011312820700, guid: 309e10e129adc4300b4db2b788da7f72,
+        type: 2}
+      propertyPath: startDelay.scalar
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198000011827243538, guid: 309e10e129adc4300b4db2b788da7f72,
+        type: 2}
+      propertyPath: startDelay.scalar
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 309e10e129adc4300b4db2b788da7f72, type: 2}
   m_IsPrefabParent: 0
@@ -6491,28 +6516,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1541533951}
   m_Script: {fileID: 11500000, guid: d7176de5a49b94f5bb3d6f444f175ade, type: 3}
---- !u!84 &1564702345
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 1179
-  m_Height: 663
-  m_AntiAliasing: 1
-  m_DepthFormat: 0
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 1
 --- !u!1001 &1607369914
 Prefab:
   m_ObjectHideFlags: 0
@@ -6633,6 +6636,28 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1607369914}
   m_Script: {fileID: 11500000, guid: d7176de5a49b94f5bb3d6f444f175ade, type: 3}
+--- !u!84 &1690209126
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 1179
+  m_Height: 663
+  m_AntiAliasing: 1
+  m_DepthFormat: 0
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 1
 --- !u!1001 &1699472362
 Prefab:
   m_ObjectHideFlags: 0
@@ -6982,7 +7007,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 1564702345}
+  m_TargetTexture: {fileID: 1690209126}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
